@@ -1,0 +1,373 @@
+/* imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap');
+
+
+/* variables */
+
+:root{
+    --principal: #6789ba;
+    --secondary: #fff;
+    --textcolor: #0c1b30;
+    --linear-gdt: radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe);
+    --font-primary: "Monteserrat", sans-serif;
+    --font-secondary: "Roboto+COndensed", cursive;
+}
+
+
+/* Normalize */
+
+*,
+*::after
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* globales */
+
+html{
+    font-size: 62.5%;
+    font-family: var(--font-primary);
+    color: var(--secondary)
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-height: 100vh;
+    background-color: var(--secondary);
+}
+
+ul{
+    list-style-type: none;
+    display: contents;
+  
+}
+
+a{
+    text-decoration: none;
+    color: var(--principal);
+    display: inline-block;
+    font-size: 2em;
+    
+}
+
+
+/* Header & Navbar*/
+
+header .navbar{
+    min-width: 10vh;
+    padding: 0 0rem;
+    align-items: center;
+    background: var(--linear-gdt);
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+
+}
+
+    
+.menu .menu__item{
+    font-size: 1em;
+    padding: 1rem;
+    text-align: center;
+}   
+
+.navbar .head{
+    background-color: var(--font-secondary);
+    align-items: center;
+    text-align: center;
+    font-size: 3em;
+    gap: 1rem;
+}
+
+.menu__item .menu__link{
+    color: var(--secondary);
+    font-size: 1em;
+    transition: transform 5s ease-in;  
+}
+
+.menu__item .menu__link:hover {
+    font-size: 2em;
+    text-transform: uppercase;
+    
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    background-color: var(--secondary);
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    
+}
+
+.section .titulonovedades{
+    font-size: 2em;
+    margin-left: 1rem;
+    border: solid 0.5rem var(--principal);
+}
+
+.section .titulonovedades h3{
+    color: var(--textcolor);
+}
+
+
+.section .novedades{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    list-style: none;
+    margin-left: 1rem;
+    border: solid 0.5rem var(--principal);
+    align-content: center;
+    padding: 0%;
+}
+
+.section .novedades h4{
+    color:var(--textcolor);
+
+}
+
+.section .novedades p{
+    color:var(--textcolor);
+
+}
+
+.section .titulolinks{
+    font-size: 2em;
+    margin-right: 1rem;
+    border: solid 0.5rem var(--principal);
+}
+
+.section .titulolinks h3{
+    color: var(--textcolor);
+}
+
+.section .insertlink p{
+    color: var(--textcolor);
+}
+
+
+.insertlink{
+    font-size: 2em;
+    height: 446px;
+    width: 450,5px;
+    margin-right: 1rem;
+    border: solid 0.5rem var(--principal);
+    text-align: center;
+    align-content: center;
+}
+
+.banner{
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border: solid 0.5rem var(--principal);
+    display: grid;
+    grid-template-rows: 1fr; 
+    background-color: rgb(200, 155, 219); 
+}
+
+.banner h3{
+    color: black;
+}
+
+.inicio{
+    text-align: end;
+    background-color: var(--secondary);
+    
+}
+
+.inicio h3{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.inicio a{
+    color: var(--font-secondary);
+    background-color: rgb(91, 129, 211);
+}
+
+/* Footer*/
+
+footer .footer{
+    min-width: 5vh;
+    padding: 0 0rem;
+    align-items: center;
+    text-align: center;
+    background: var(--linear-gdt);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+/* About*/
+
+.navbar .tituloenlace{
+    text-align: center;
+    font-size: 2em;
+}
+
+.aboutme h2{
+    border: solid 1rem var(--principal);
+    color: black;
+    font-size: 2em;
+}
+
+.aboutme div{
+    color: black;
+    font-size: 2em;
+    text-align: justify;
+}
+
+.menuabout .menu__item{
+    text-align: center;
+}
+
+
+/* Portfolio*/
+
+.aboutservicios{
+    color: var(--textcolor);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    display: contents;
+    text-decoration: none;
+}
+
+.aboutservicios ul{
+    text-decoration: none;
+    text-align: start;
+}
+
+
+
+/* Contacto&Consultas*/
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.labels{
+    row-gap: 2rem; 
+}
+
+.labels p{
+    color: var(--textcolor);
+    font-size: 2em;
+}
+
+.labels h3{
+    font-size: 2.5em;
+    color: var(--textcolor);
+}
+
+.labels .tituloform {
+    display: inline-flex;
+}
+
+
+/* Herramientas*/
+
+.tabla{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin:auto
+}
+
+.tabla h2{
+    color: var(--textcolor);
+    font-size: 3em;
+}
+
+.tabla th{
+    color: var(--textcolor);
+    font-size: 3em;
+}
+
+.tabla td{
+    color: var(--textcolor);
+    font-size: 3em;
+}
+
+
+@media screen and (max-width: 460px){
+    .head{
+        font-size: 0.2em;
+    }
+
+    .tituloenlace{
+        font-size: 0.2em;
+    }
+
+    .menuabout{
+        text-align: center;
+        gap: 0.5rem
+    }
+    
+    .insertlink{
+        height: 500px;  
+    }
+
+    .menu .menu__item{
+        font-size: 2em;    
+    }
+
+    section{
+        height: 155rem;
+    }
+    
+    .novedades{
+        height: 140rem;
+    }
+    
+    .insertlink{
+        height: 140rem;
+    }
+
+   img{
+       width: max-content;
+    }
+
+   .menuopcion{
+       font-size: 2em;
+    }
+
+   .aboutme{
+    height: 155rem;
+    }
+
+   .menuservicios{
+    font-size: 2em;
+    }
+
+   .aboutservicios{
+    height: 155rem;
+    }
+
+    .menu{
+        font-size: 2em;
+     }
+ 
+    .formulario{
+     height: 155rem;
+     }
+
+
+    }
