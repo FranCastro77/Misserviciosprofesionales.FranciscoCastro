@@ -95,6 +95,14 @@ header .navbar{
     
 }
 
+.navbar .logo{
+    transition: transform 5s ease-in-out;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.5);
+}
+
 section{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -216,6 +224,16 @@ footer .footer{
 .navbar .tituloenlace{
     text-align: center;
     font-size: 2em;
+}
+
+.navbar .tituloenlace{
+    animation-name: changecolor;
+    animation-duration: 4s;
+}
+
+@keyframes changecolor{
+    from { color: var(--secondary);}
+    to {color: rgb(100, 102, 100);}
 }
 
 .aboutme h2{
