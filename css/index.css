@@ -31,19 +31,21 @@
 html{
     font-size: 62.5%;
     font-family: var(--font-primary);
-    color: var(--secondary)
 }
 
 body{
     display: grid;
     grid-template-rows: auto 1fr auto;
-    max-height: 100vh;
+    min-height: 100vh;
     background-color: var(--secondary);
+    color: var(--secondary)
+    font-family var(--font-primary);
 }
 
 ul{
     list-style-type: none;
     display: contents;
+    font-size: 1.5em;
   
 }
 
@@ -79,8 +81,9 @@ header .navbar{
     background-color: var(--font-secondary);
     align-items: center;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
     gap: 1rem;
+    color: var(--secondary)
 }
 
 .menu__item .menu__link{
@@ -97,6 +100,7 @@ header .navbar{
 
 .navbar .logo{
     transition: transform 5s ease-in-out;
+    height: 100%;
 }
 
 .navbar .logo:hover {
@@ -108,7 +112,6 @@ section{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 4fr;
     background-color: var(--secondary);
-    align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     grid-column-gap: 2rem;
@@ -119,11 +122,13 @@ section{
 .section .titulonovedades{
     font-size: 2em;
     margin-left: 1rem;
+    margin-top: 1.5rem;
     border: solid 0.5rem var(--principal);
 }
 
 .section .titulonovedades h3{
     color: var(--textcolor);
+    margin-top: 1rem;
 }
 
 
@@ -136,6 +141,7 @@ section{
     border: solid 0.5rem var(--principal);
     align-content: center;
     padding: 0%;
+    height: 100%;
 }
 
 .section .novedades h4{
@@ -151,11 +157,13 @@ section{
 .section .titulolinks{
     font-size: 2em;
     margin-right: 1rem;
+    margin-top: 1.5rem;
     border: solid 0.5rem var(--principal);
 }
 
 .section .titulolinks h3{
     color: var(--textcolor);
+    margin-top: 1rem;
 }
 
 .section .insertlink p{
@@ -165,12 +173,14 @@ section{
 
 .insertlink{
     font-size: 2em;
-    height: 446px;
-    width: 450,5px;
     margin-right: 1rem;
     border: solid 0.5rem var(--principal);
-    text-align: center;
     align-content: center;
+    text-decoration: none;
+    display: inline-block;
+    list-style: none;
+    padding: 0%;
+    height: 100%;
 }
 
 .banner{
@@ -178,6 +188,7 @@ section{
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     border: solid 0.5rem var(--principal);
     display: grid;
     grid-template-rows: 1fr; 
@@ -185,12 +196,7 @@ section{
 }
 
 .banner h3{
-    color: black;
-}
-
-.inicio{
-    text-align: end;
-    background-color: var(--secondary);
+    color: black
     
 }
 
@@ -205,6 +211,12 @@ section{
     background-color: rgb(91, 129, 211);
 }
 
+.card{
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+
 /* Footer*/
 
 footer .footer{
@@ -215,6 +227,8 @@ footer .footer{
     background: var(--linear-gdt);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    color: var(--secondary);
+    font-size: 2em;
 }
 
 
@@ -224,6 +238,7 @@ footer .footer{
 .navbar .tituloenlace{
     text-align: center;
     font-size: 2em;
+    color: var(--secondary)
 }
 
 .navbar .tituloenlace{
@@ -250,10 +265,17 @@ footer .footer{
 
 .menuabout .menu__item{
     text-align: center;
+    font-size: 2em;
+    font-family: var(--font-primary);
 }
 
 
 /* Portfolio*/
+
+.navbar .servicios{
+    font-family: var(--font-primary);
+    font-size: 2em;
+}
 
 .aboutservicios{
     color: var(--textcolor);
@@ -276,30 +298,56 @@ footer .footer{
 
 .formulario{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2rem;
+    font-size: 1.5em;
 }
 
-.labels{
-    row-gap: 2rem; 
+label{
+    color: var(--textcolor);
+    text-align: center;
+}
+
+input{
+    align-content: center;
+    text-align: center;
+}
+
+option{
+    align-content: center;
+    text-align: center;
 }
 
 .labels p{
     color: var(--textcolor);
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .labels h3{
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: var(--textcolor);
 }
 
 .labels .tituloform {
     display: inline-flex;
+    padding-top: 0%;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#floatingTextarea2{
+    height: 100px;
 }
 
 
 /* Herramientas*/
+
 
 .tabla{
     display: grid;
@@ -314,7 +362,18 @@ footer .footer{
     font-size: 3em;
 }
 
-.tabla th{
+th {
+    font-size: 2em;
+    text-align: end;
+}
+
+td {
+    font-size: 2em;
+}
+
+
+
+/* .tabla th{
     color: var(--textcolor);
     font-size: 3em;
 }
@@ -322,14 +381,14 @@ footer .footer{
 .tabla td{
     color: var(--textcolor);
     font-size: 3em;
-}
+} */
 
 
-@media screen and (max-width: 460px){
-    .head{
+/* @media screen and (max-width: 460px){
+    /* .head{
         font-size: 0.2em;
-    }
-
+    } */
+/* 
     .tituloenlace{
         font-size: 0.2em;
     }
@@ -373,8 +432,8 @@ footer .footer{
 
    .menuservicios{
     font-size: 2em;
-    }
-
+    } */
+/* 
    .aboutservicios{
     height: 155rem;
     }
@@ -385,7 +444,4 @@ footer .footer{
  
     .formulario{
      height: 155rem;
-     }
-
-
-    }
+     } */
