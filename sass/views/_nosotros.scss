@@ -1,0 +1,67 @@
+.navbar .tituloenlace{
+    text-align: center;
+    font-size: 2em;
+}
+
+.navbar .tituloenlace{
+    animation-name: changecolor;
+    animation-duration: 4s;
+}
+
+@keyframes changecolor{
+    from { color: $secondary;}
+    to {color: rgb(100, 102, 100);}
+}
+
+.aboutme h2{
+    border: solid 1rem $principal;
+    color: black;
+    font-size: 2em;
+}
+
+.aboutme div{
+    color: black;
+    font-size: 2em;
+    text-align: justify;
+}
+
+.menuabout .menu__item{
+    text-align: center;
+}
+
+.inicio{
+    text-align: end;
+    background-color: $secondary;
+    
+}
+
+.inicio h3{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.inicio a{
+    color: $font-secondary;
+    background-color: rgb(91, 129, 211);
+}
+
+@media screen and (max-width: 460px){
+    
+    .tituloenlace{
+        font-size: 0.2em;
+    }
+
+    .menu .menu__item{
+        font-size: 2em;    
+    }
+
+    .menuopcion{
+        font-size: 2em;
+     }
+ 
+    .aboutme{
+     height: 155rem;
+     }
+ 
+}

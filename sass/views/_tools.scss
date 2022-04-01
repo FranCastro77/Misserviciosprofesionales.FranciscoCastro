@@ -1,0 +1,39 @@
+.tabla{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin:auto
+}
+
+.tabla h2{
+    color: $textcolor;
+    font-size: 3em;
+}
+
+.tabla th{
+    color: $textcolor;
+    font-size: 3em;
+}
+
+.tabla td{
+    color: $textcolor;
+    font-size: 3em;
+}
+
+.inicio{
+    text-align: end;
+    background-color: $secondary;
+    
+}
+
+.inicio h3{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.inicio a{
+    color: $font-secondary;
+    background-color: rgb(91, 129, 211);
+}

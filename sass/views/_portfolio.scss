@@ -1,0 +1,42 @@
+.aboutservicios{
+    color: $textcolor;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    display: contents;
+    text-decoration: none;
+}
+
+.aboutservicios ul{
+    text-decoration: none;
+    text-align: start;
+}
+
+.inicio{
+    text-align: end;
+    background-color: $secondary;
+    
+}
+
+.inicio h3{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.inicio a{
+    color: $font-secondary;
+    background-color: rgb(91, 129, 211);
+}
+
+@media screen and (max-width: 460px){
+    
+   .menuservicios{
+    font-size: 2em;
+    }
+
+   .aboutservicios{
+    height: 155rem;
+    }
+}

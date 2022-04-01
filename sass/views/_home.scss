@@ -1,0 +1,105 @@
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    background-color: $secondary;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    
+    .titulonovedades{
+        font-size: 2em;
+        margin-left: 1rem;
+        border: solid 0.5rem $principal;
+    }
+    
+    .titulonovedades h3{
+        color: $textcolor;
+    }
+    
+    
+    .novedades{
+        text-decoration: none;
+        display: inline-block;
+        font-size: 2em;
+        list-style: none;
+        margin-left: 1rem;
+        border: solid 0.5rem $principal;
+        align-content: center;
+        padding: 0%;
+    }
+    
+    .novedades h4{
+        color:$textcolor;
+    
+    }
+    
+    .novedades p{
+        color:$textcolor;
+    
+    }
+    
+    .titulolinks{
+        font-size: 2em;
+        margin-right: 1rem;
+        border: solid 0.5rem $principal;
+    }
+    
+    .titulolinks h3{
+        color: $textcolor;
+    }
+    
+    .insertlink p{
+        color: $textcolor;
+    }
+
+    .insertlink{
+        font-size: 2em;
+        height: 446px;
+        width: 450,5px;
+        margin-right: 1rem;
+        border: solid 0.5rem $principal;
+        text-align: center;
+        align-content: center;
+    }
+}
+
+.banner{
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border: solid 0.5rem $principal;
+    display: grid;
+    grid-template-rows: 1fr; 
+    background-color: rgb(200, 155, 219); 
+}
+
+.banner h3{
+    color: black;
+}
+
+@media screen and (max-width: 460px){
+
+    .insertlink{
+        height: 500px;  
+    }
+
+    section{
+        height: 155rem;
+    }
+    
+    .novedades{
+        height: 140rem;
+    }
+    
+    .insertlink{
+        height: 140rem;
+    }
+    
+    .menu{
+        font-size: 2em;
+     }
+}

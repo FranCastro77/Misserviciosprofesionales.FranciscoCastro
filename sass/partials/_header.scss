@@ -1,0 +1,57 @@
+header .navbar{
+    min-width: 10vh;
+    padding: 0 0rem;
+    align-items: center;
+    background: $linear-gdt;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+
+    .menu .menu__item{
+        font-size: 1em;
+        padding: 1rem;
+        text-align: center;
+    }   
+
+    .head{
+        background-color: $font-secondary;
+        align-items: center;
+        text-align: center;
+        font-size: 3em;
+        gap: 1rem;
+    }
+    
+    .menu__item .menu__link{
+        color: $secondary;
+        font-size: 1em;
+        transition: transform 5s ease-in;  
+
+        &:hover{
+            font-size: 2em;
+            text-transform: uppercase;  
+        }
+    }
+
+    .logo{
+        transition: transform 5s ease-in-out;
+        
+        &:hover{
+            transform: scale(1.5);
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 460px){
+    .head{
+        font-size: 0.2em;
+    }
+}
+
+    
+
+
+
+
+
+

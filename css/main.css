@@ -1,0 +1,297 @@
+/*IMPORTS */
+/*MISCELANEOUS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap");
+/* RESET */
+*,
+*::after
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* GLOBALS */
+html {
+  font-size: 62.5%;
+  font-family: "Monteserrat", sans-serif;
+  color: #fff; }
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-height: 100vh;
+  background-color: #fff; }
+
+ul {
+  list-style-type: none;
+  display: contents; }
+
+a {
+  text-decoration: none;
+  color: #6789ba;
+  display: inline-block;
+  font-size: 2em; }
+
+/*PARTIALS */
+header .navbar {
+  min-width: 10vh;
+  padding: 0 0rem;
+  align-items: center;
+  background: radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe);
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr; }
+  header .navbar .menu .menu__item {
+    font-size: 1em;
+    padding: 1rem;
+    text-align: center; }
+  header .navbar .head {
+    background-color: "Roboto+COndensed", cursive;
+    align-items: center;
+    text-align: center;
+    font-size: 3em;
+    gap: 1rem; }
+  header .navbar .menu__item .menu__link {
+    color: #fff;
+    font-size: 1em;
+    transition: transform 5s ease-in; }
+    header .navbar .menu__item .menu__link:hover {
+      font-size: 2em;
+      text-transform: uppercase; }
+  header .navbar .logo {
+    transition: transform 5s ease-in-out; }
+    header .navbar .logo:hover {
+      transform: scale(1.5); }
+
+@media screen and (max-width: 460px) {
+  .head {
+    font-size: 0.2em; } }
+
+footer {
+  min-width: 5vh;
+  padding: 0 0rem;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe);
+  display: grid;
+  grid-column: 1fr 1fr 1fr; }
+
+/*VIEWS */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  background-color: #fff;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem; }
+  section .titulonovedades {
+    font-size: 2em;
+    margin-left: 1rem;
+    border: solid 0.5rem #6789ba; }
+  section .titulonovedades h3 {
+    color: #0c1b30; }
+  section .novedades {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    list-style: none;
+    margin-left: 1rem;
+    border: solid 0.5rem #6789ba;
+    align-content: center;
+    padding: 0%; }
+  section .novedades h4 {
+    color: #0c1b30; }
+  section .novedades p {
+    color: #0c1b30; }
+  section .titulolinks {
+    font-size: 2em;
+    margin-right: 1rem;
+    border: solid 0.5rem #6789ba; }
+  section .titulolinks h3 {
+    color: #0c1b30; }
+  section .insertlink p {
+    color: #0c1b30; }
+  section .insertlink {
+    font-size: 2em;
+    height: 446px;
+    width: 450,5px;
+    margin-right: 1rem;
+    border: solid 0.5rem #6789ba;
+    text-align: center;
+    align-content: center; }
+
+.banner {
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border: solid 0.5rem #6789ba;
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: #c89bdb; }
+
+.banner h3 {
+  color: black; }
+
+@media screen and (max-width: 460px) {
+  .insertlink {
+    height: 500px; }
+  section {
+    height: 155rem; }
+  .novedades {
+    height: 140rem; }
+  .insertlink {
+    height: 140rem; }
+  .menu {
+    font-size: 2em; } }
+
+.navbar .tituloenlace {
+  text-align: center;
+  font-size: 2em; }
+
+.navbar .tituloenlace {
+  animation-name: changecolor;
+  animation-duration: 4s; }
+
+@keyframes changecolor {
+  from {
+    color: #fff; }
+  to {
+    color: #646664; } }
+
+.aboutme h2 {
+  border: solid 1rem #6789ba;
+  color: black;
+  font-size: 2em; }
+
+.aboutme div {
+  color: black;
+  font-size: 2em;
+  text-align: justify; }
+
+.menuabout .menu__item {
+  text-align: center; }
+
+.inicio {
+  text-align: end;
+  background-color: #fff; }
+
+.inicio h3 {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em; }
+
+.inicio a {
+  color: "Roboto+COndensed", cursive;
+  background-color: #5b81d3; }
+
+@media screen and (max-width: 460px) {
+  .tituloenlace {
+    font-size: 0.2em; }
+  .menu .menu__item {
+    font-size: 2em; }
+  .menuopcion {
+    font-size: 2em; }
+  .aboutme {
+    height: 155rem; } }
+
+.aboutservicios {
+  color: #0c1b30;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  list-style-type: none;
+  display: contents;
+  text-decoration: none; }
+
+.aboutservicios ul {
+  text-decoration: none;
+  text-align: start; }
+
+.inicio {
+  text-align: end;
+  background-color: #fff; }
+
+.inicio h3 {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em; }
+
+.inicio a {
+  color: "Roboto+COndensed", cursive;
+  background-color: #5b81d3; }
+
+@media screen and (max-width: 460px) {
+  .menuservicios {
+    font-size: 2em; }
+  .aboutservicios {
+    height: 155rem; } }
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; }
+
+.labels {
+  row-gap: 2rem; }
+
+.labels p {
+  color: #0c1b30;
+  font-size: 2em; }
+
+.labels h3 {
+  font-size: 2.5em;
+  color: #0c1b30; }
+
+.labels .tituloform {
+  display: inline-flex; }
+
+.inicio {
+  text-align: end;
+  background-color: #fff; }
+
+.inicio h3 {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em; }
+
+.inicio a {
+  color: "Roboto+COndensed", cursive;
+  background-color: #5b81d3; }
+
+@media screen and (max-width: 460px) {
+  .formulario {
+    height: 155rem; } }
+
+.tabla {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin: auto; }
+
+.tabla h2 {
+  color: #0c1b30;
+  font-size: 3em; }
+
+.tabla th {
+  color: #0c1b30;
+  font-size: 3em; }
+
+.tabla td {
+  color: #0c1b30;
+  font-size: 3em; }
+
+.inicio {
+  text-align: end;
+  background-color: #fff; }
+
+.inicio h3 {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em; }
+
+.inicio a {
+  color: "Roboto+COndensed", cursive;
+  background-color: #5b81d3; }

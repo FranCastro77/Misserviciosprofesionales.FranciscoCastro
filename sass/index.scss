@@ -1,0 +1,20 @@
+/*IMPORTS */
+
+/*MISCELANEOUS */ 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap');
+
+@import './misc/variables';
+@import './misc/normalize';
+@import './misc/mixins';
+@import './misc/animations';
+
+/*PARTIALS */ 
+@import './partials/header';
+@import './partials/footer';
+
+/*VIEWS */ 
+@import './views/home';
+@import './views/nosotros';
+@import './views/portfolio';
+@import './views/contact';
+@import './views/tools';

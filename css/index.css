@@ -1,10 +1,10 @@
 /* imports */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap');
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap'); */
 
 
 /* variables */
-
+/* 
 :root{
     --principal: #6789ba;
     --secondary: #fff;
@@ -16,29 +16,29 @@
 
 
 /* Normalize */
-
+/* 
 *,
 *::after
 *::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 
 /* globales */
-
+/* 
 html{
     font-size: 62.5%;
-    font-family: var(--font-primary);
-    color: var(--secondary)
+    font-family: $font-primary;
+    color: $secondary
 }
 
 body{
     display: grid;
     grid-template-rows: auto 1fr auto;
     max-height: 100vh;
-    background-color: var(--secondary);
+    background-color: $secondary;
 }
 
 ul{
@@ -49,20 +49,20 @@ ul{
 
 a{
     text-decoration: none;
-    color: var(--principal);
+    color: $principal;
     display: inline-block;
     font-size: 2em;
     
-}
+} */ 
 
 
 /* Header & Navbar*/
 
-header .navbar{
+/* header .navbar{
     min-width: 10vh;
     padding: 0 0rem;
     align-items: center;
-    background: var(--linear-gdt);
+    background: $linear-gdt;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
 
@@ -76,7 +76,7 @@ header .navbar{
 }   
 
 .navbar .head{
-    background-color: var(--font-secondary);
+    background-color: $font-secondary;
     align-items: center;
     text-align: center;
     font-size: 3em;
@@ -84,7 +84,7 @@ header .navbar{
 }
 
 .menu__item .menu__link{
-    color: var(--secondary);
+    color: $secondary;
     font-size: 1em;
     transition: transform 5s ease-in;  
 }
@@ -101,13 +101,13 @@ header .navbar{
 
 .navbar .logo:hover {
     transform: scale(1.5);
-}
+} */
 
-section{
+/* section{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 4fr;
-    background-color: var(--secondary);
+    background-color: $secondary;
     align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
@@ -119,11 +119,11 @@ section{
 .section .titulonovedades{
     font-size: 2em;
     margin-left: 1rem;
-    border: solid 0.5rem var(--principal);
+    border: solid 0.5rem $principal;
 }
 
 .section .titulonovedades h3{
-    color: var(--textcolor);
+    color: $textcolor;
 }
 
 
@@ -133,33 +133,33 @@ section{
     font-size: 2em;
     list-style: none;
     margin-left: 1rem;
-    border: solid 0.5rem var(--principal);
+    border: solid 0.5rem $principal;
     align-content: center;
     padding: 0%;
 }
 
 .section .novedades h4{
-    color:var(--textcolor);
+    color:$textcolor;
 
 }
 
 .section .novedades p{
-    color:var(--textcolor);
+    color:$textcolor;
 
 }
 
 .section .titulolinks{
     font-size: 2em;
     margin-right: 1rem;
-    border: solid 0.5rem var(--principal);
+    border: solid 0.5rem $principal;
 }
 
 .section .titulolinks h3{
-    color: var(--textcolor);
+    color: $textcolor;
 }
 
 .section .insertlink p{
-    color: var(--textcolor);
+    color: $textcolor;
 }
 
 
@@ -168,7 +168,7 @@ section{
     height: 446px;
     width: 450,5px;
     margin-right: 1rem;
-    border: solid 0.5rem var(--principal);
+    border: solid 0.5rem $principal;
     text-align: center;
     align-content: center;
 }
@@ -178,19 +178,19 @@ section{
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    border: solid 0.5rem var(--principal);
+    border: solid 0.5rem $principal;
     display: grid;
     grid-template-rows: 1fr; 
     background-color: rgb(200, 155, 219); 
-}
+} */
 
-.banner h3{
+/* .banner h3{
     color: black;
-}
+} */
 
-.inicio{
+/* .inicio{
     text-align: end;
-    background-color: var(--secondary);
+    background-color: $secondary;
     
 }
 
@@ -201,27 +201,27 @@ section{
 }
 
 .inicio a{
-    color: var(--font-secondary);
+    color: $font-secondary;
     background-color: rgb(91, 129, 211);
-}
+} */
 
 /* Footer*/
 
-footer .footer{
+/* footer .footer{
     min-width: 5vh;
     padding: 0 0rem;
     align-items: center;
     text-align: center;
-    background: var(--linear-gdt);
+    background: $linear-gdt;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
+} */
 
 
 
 /* About*/
 
-.navbar .tituloenlace{
+/* .navbar .tituloenlace{
     text-align: center;
     font-size: 2em;
 }
@@ -232,12 +232,12 @@ footer .footer{
 }
 
 @keyframes changecolor{
-    from { color: var(--secondary);}
+    from { color: $secondary;}
     to {color: rgb(100, 102, 100);}
 }
 
 .aboutme h2{
-    border: solid 1rem var(--principal);
+    border: solid 1rem $principal;
     color: black;
     font-size: 2em;
 }
@@ -250,13 +250,13 @@ footer .footer{
 
 .menuabout .menu__item{
     text-align: center;
-}
+} */
 
 
 /* Portfolio*/
 
-.aboutservicios{
-    color: var(--textcolor);
+/* .aboutservicios{
+    color: $textcolor;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -268,13 +268,13 @@ footer .footer{
 .aboutservicios ul{
     text-decoration: none;
     text-align: start;
-}
+} */
 
 
 
 /* Contacto&Consultas*/
 
-.formulario{
+/* .formulario{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -285,23 +285,23 @@ footer .footer{
 }
 
 .labels p{
-    color: var(--textcolor);
+    color: $textcolor;
     font-size: 2em;
 }
 
 .labels h3{
     font-size: 2.5em;
-    color: var(--textcolor);
+    color: $textcolor;
 }
 
 .labels .tituloform {
     display: inline-flex;
-}
+} */
 
 
 /* Herramientas*/
 
-.tabla{
+/* .tabla{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-columns: 1fr;
@@ -310,27 +310,27 @@ footer .footer{
 }
 
 .tabla h2{
-    color: var(--textcolor);
+    color: $textcolor;
     font-size: 3em;
 }
 
 .tabla th{
-    color: var(--textcolor);
+    color: $textcolor;
     font-size: 3em;
 }
 
 .tabla td{
-    color: var(--textcolor);
+    color: $textcolor;
     font-size: 3em;
-}
+} */
 
-
+/* 
 @media screen and (max-width: 460px){
-    .head{
+    /* .head{
         font-size: 0.2em;
-    }
+    } */
 
-    .tituloenlace{
+    /* .tituloenlace{
         font-size: 0.2em;
     }
 
@@ -339,15 +339,15 @@ footer .footer{
         gap: 0.5rem
     }
     
-    .insertlink{
+    /* .insertlink{
         height: 500px;  
-    }
+    } */
 
-    .menu .menu__item{
+    /* .menu .menu__item{
         font-size: 2em;    
-    }
+    }   */
 
-    section{
+    /* section{
         height: 155rem;
     }
     
@@ -357,35 +357,35 @@ footer .footer{
     
     .insertlink{
         height: 140rem;
-    }
+    } */
 
-   img{
+   /* img{
        width: max-content;
-    }
+    } */
 
-   .menuopcion{
+   /* .menuopcion{
        font-size: 2em;
     }
 
    .aboutme{
     height: 155rem;
-    }
+    } */
 
-   .menuservicios{
+   /* .menuservicios{
     font-size: 2em;
     }
 
    .aboutservicios{
     height: 155rem;
-    }
+    } */
 
-    .menu{
+    /* .menu{
         font-size: 2em;
-     }
+     } */
  
-    .formulario{
+    /* .formulario{
      height: 155rem;
-     }
+     } */
 
 
-    }
+    /* } */

@@ -1,0 +1,47 @@
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.labels{
+    row-gap: 2rem; 
+}
+
+.labels p{
+    color: $textcolor;
+    font-size: 2em;
+}
+
+.labels h3{
+    font-size: 2.5em;
+    color: $textcolor;
+}
+
+.labels .tituloform {
+    display: inline-flex;
+}
+
+.inicio{
+    text-align: end;
+    background-color: $secondary;
+    
+}
+
+.inicio h3{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+}
+
+.inicio a{
+    color: $font-secondary;
+    background-color: rgb(91, 129, 211);
+}
+
+@media screen and (max-width: 460px){
+    
+    .formulario{
+        height: 155rem;
+        }
+}
