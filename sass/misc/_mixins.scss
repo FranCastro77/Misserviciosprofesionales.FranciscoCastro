@@ -1,0 +1,6 @@
+@mixin helper($align: center, $textalign: center, $font: 2em){
+    align-items: $align;
+    text-align: $textalign;
+    font-size: $font;
+
+}

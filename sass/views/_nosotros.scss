@@ -21,8 +21,9 @@
 
 .aboutme div{
     color: black;
-    font-size: 2em;
-    text-align: justify;
+    // font-size: 2em;
+    // text-align: justify;
+    @include helper($textalign: justify)
 }
 
 .menuabout .menu__item{

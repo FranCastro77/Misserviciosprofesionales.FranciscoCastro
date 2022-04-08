@@ -2,7 +2,8 @@ header .navbar{
     min-width: 10vh;
     padding: 0 0rem;
     align-items: center;
-    background: $linear-gdt;
+    // background: $linear-gdt;
+    background: map-get($colors , linear);
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
 

@@ -1,10 +1,13 @@
 footer{
-    min-width: 5vh;
-    padding: 0 0rem;
+    padding: 0 auto;
     align-items: center;
     text-align: center;
-    background: $linear-gdt;
-    display: grid;
-    grid-column: 1fr 1fr 1fr;
+    // background: $linear-gdt;
+    background: map-get($colors , linear);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem
+
 }
 

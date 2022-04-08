@@ -3,11 +3,12 @@ section{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 4fr;
     background-color: $secondary;
-    align-items: center;
+    // align-items: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+    // text-align: center;
     grid-column-gap: 2rem;
     grid-row-gap: 1rem;
+    @include helper($font:1em);
     
     .titulonovedades{
         font-size: 2em;
@@ -23,12 +24,13 @@ section{
     .novedades{
         text-decoration: none;
         display: inline-block;
-        font-size: 2em;
+        // font-size: 2em;
         list-style: none;
-        margin-left: 1rem;
-        border: solid 0.5rem $principal;
+        // margin-left: 1rem;
+        // border: solid 0.5rem $principal;
         align-content: center;
         padding: 0%;
+        @extend.titulonovedades;
     }
     
     .novedades h4{
@@ -42,9 +44,10 @@ section{
     }
     
     .titulolinks{
-        font-size: 2em;
-        margin-right: 1rem;
-        border: solid 0.5rem $principal;
+        // font-size: 2em;
+        // margin-right: 1rem;
+        // border: solid 0.5rem $principal;
+        @extend.titulonovedades;
     }
     
     .titulolinks h3{

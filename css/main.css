@@ -3,8 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto+Condensed:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200&display=swap");
 /* RESET */
 *,
-*::after
-*::before {
+*::after *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
@@ -66,13 +65,14 @@ header .navbar {
     font-size: 0.2em; } }
 
 footer {
-  min-width: 5vh;
-  padding: 0 0rem;
+  padding: 0 auto;
   align-items: center;
   text-align: center;
   background: radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe);
-  display: grid;
-  grid-column: 1fr 1fr 1fr; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem; }
 
 /*VIEWS */
 section {
@@ -80,34 +80,28 @@ section {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 4fr;
   background-color: #fff;
-  align-items: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem; }
-  section .titulonovedades {
+  grid-row-gap: 1rem;
+  align-items: center;
+  text-align: center;
+  font-size: 1em; }
+  section .titulonovedades, section .novedades, section .titulolinks {
     font-size: 2em;
     margin-left: 1rem;
     border: solid 0.5rem #6789ba; }
-  section .titulonovedades h3 {
+  section .titulonovedades h3, section .novedades h3, section .titulolinks h3 {
     color: #0c1b30; }
   section .novedades {
     text-decoration: none;
     display: inline-block;
-    font-size: 2em;
     list-style: none;
-    margin-left: 1rem;
-    border: solid 0.5rem #6789ba;
     align-content: center;
     padding: 0%; }
   section .novedades h4 {
     color: #0c1b30; }
   section .novedades p {
     color: #0c1b30; }
-  section .titulolinks {
-    font-size: 2em;
-    margin-right: 1rem;
-    border: solid 0.5rem #6789ba; }
   section .titulolinks h3 {
     color: #0c1b30; }
   section .insertlink p {
@@ -167,8 +161,9 @@ section {
 
 .aboutme div {
   color: black;
-  font-size: 2em;
-  text-align: justify; }
+  align-items: center;
+  text-align: justify;
+  font-size: 2em; }
 
 .menuabout .menu__item {
   text-align: center; }
