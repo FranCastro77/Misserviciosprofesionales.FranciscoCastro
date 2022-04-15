@@ -1,24 +1,31 @@
 .tabla{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     text-align: center;
-    margin:auto
+    margin:auto;
+    padding-top: 2rem;
 }
 
-.tabla h2{
+.tipoimpuesto h3{
+    color: map-get($colors, colortext);
+    
+}
+
+.titulotabla h2{
     color: $textcolor;
-    font-size: 3em;
+    font-size: 2em;
+    text-align: center;
 }
 
 .tabla th{
     color: $textcolor;
-    font-size: 3em;
+    font-size: 1.5em;
 }
 
 .tabla td{
     color: $textcolor;
-    font-size: 3em;
+    font-size: 1em;
 }
 
 .inicio{

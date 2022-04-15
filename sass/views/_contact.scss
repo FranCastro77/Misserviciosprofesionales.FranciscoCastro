@@ -1,25 +1,42 @@
 .formulario{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    background-color: map-get($colors, recuadro);
+    justify-content: center;
+
 }
 
-.labels{
-    row-gap: 2rem; 
+.form{
+    border: solid 0.2rem map-get($colors, bordercolor);
+    background-image: map-get($colors, cuadrohome);
 }
 
-.labels p{
-    color: $textcolor;
-    font-size: 2em;
+.labeldatos{
+    font-size: 3rem;
+    align-content:left;
 }
 
-.labels h3{
-    font-size: 2.5em;
-    color: $textcolor;
+.labelconsulta{
+    font-size: 2rem;
+    align-items:left;
 }
 
-.labels .tituloform {
-    display: inline-flex;
+.labelconsulta p{
+    font-size: 1em;
+    color: map-get($colors, colortext);
+}
+
+.enviar{
+    background-color: map-get($colors, recuadro);
+    align-items: center;
+    
+}
+
+
+hr{
+    @extend hr;
 }
 
 .inicio{

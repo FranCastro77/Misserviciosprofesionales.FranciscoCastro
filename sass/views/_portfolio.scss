@@ -8,9 +8,26 @@
     text-decoration: none;
 }
 
+.aboutservicios article{
+        color: black;
+        @include helper($textalign: justify);
+    }
+
 .aboutservicios ul{
     text-decoration: none;
     text-align: start;
+    @include helper($textalign: justify)
+}
+
+.aboutservicios h2{
+    border: solid 0.2rem $principal;
+    color: black;
+    font-size: 2em;
+    text-align: center;
+}
+
+hr{
+    @extend hr;
 }
 
 .inicio{

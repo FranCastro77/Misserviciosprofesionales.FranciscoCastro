@@ -2,18 +2,19 @@ section{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 4fr;
-    background-color: $secondary;
-    // align-items: center;
+    background: map-get($colors , secondary);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    // text-align: center;
     grid-column-gap: 2rem;
     grid-row-gap: 1rem;
     @include helper($font:1em);
     
+    
     .titulonovedades{
         font-size: 2em;
         margin-left: 1rem;
-        border: solid 0.5rem $principal;
+        border: solid 0.2rem map-get($colors, bordercolor);
+        background-color: map-get($colors, recuadro);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
     .titulonovedades h3{
@@ -24,49 +25,69 @@ section{
     .novedades{
         text-decoration: none;
         display: inline-block;
-        // font-size: 2em;
         list-style: none;
-        // margin-left: 1rem;
-        // border: solid 0.5rem $principal;
         align-content: center;
         padding: 0%;
         @extend.titulonovedades;
+        background-image: map-get($colors, cuadrohome);
+        border: none;
     }
     
     .novedades h4{
         color:$textcolor;
-    
     }
     
+    .novedades .menu__link{
+        color: map-get($colors, colortext);
+        font-size: 1em;
+        text-align: center;
+        align-items: center;
+    }
+
+
     .novedades p{
         color:$textcolor;
     
     }
     
     .titulolinks{
-        // font-size: 2em;
-        // margin-right: 1rem;
-        // border: solid 0.5rem $principal;
         @extend.titulonovedades;
+        margin-right: 1rem;
     }
     
     .titulolinks h3{
         color: $textcolor;
     }
     
-    .insertlink p{
-        color: $textcolor;
+    .insertlink a{
+        text-decoration: none;
+        color: map-get($colors, colortext );
+        text-decoration: underline;
+        padding-top: 3rem;
     }
+    .insertlink iframe{
+        position: center;
+        padding-bottom:1.2rem;
+        padding-top: 1.2rem;
+    }
+    
 
     .insertlink{
-        font-size: 2em;
+        @extend.titulonovedades;
+        font-size: 3em;
         height: 446px;
         width: 450,5px;
         margin-right: 1rem;
-        border: solid 0.5rem $principal;
         text-align: center;
         align-content: center;
-    }
+        text-decoration: none;
+        list-style-type: none;
+        font-size: 1em;
+        text-align: center;
+        background-image: map-get($colors, cuadro);
+        border: none;
+        
+        }
 }
 
 .banner{
@@ -74,14 +95,15 @@ section{
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    border: solid 0.5rem $principal;
-    display: grid;
-    grid-template-rows: 1fr; 
-    background-color: rgb(200, 155, 219); 
+    background-image: map-get($colors, cuadro);
+    height: 4rem;
 }
 
-.banner h3{
-    color: black;
+    .enlaces .menu__link{
+    color: map-get($colors, secondary);
+    font-size: 2em;
+    text-align: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 460px){

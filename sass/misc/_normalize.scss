@@ -14,14 +14,14 @@
 html{
     font-size: 62.5%;
     font-family: $font-primary;
-    color: $secondary
+    color: map-get($colors, secondary);
 }
 
 body{
     display: grid;
     grid-template-rows: auto 1fr auto;
     max-height: 100vh;
-    background-color: $secondary;
+    background-color: map-get($colors, secondary);
 }
 
 ul{
@@ -32,8 +32,7 @@ ul{
 
 a{
     text-decoration: none;
-    color: $principal;
+    color: map-get($colors, primary);
     display: inline-block;
-    font-size: 2em;
-    
+    font-size: 2em;   
 }

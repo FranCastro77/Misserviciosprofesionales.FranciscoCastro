@@ -2,12 +2,10 @@ footer{
     padding: 0 auto;
     align-items: center;
     text-align: center;
-    // background: $linear-gdt;
-    background: map-get($colors , linear);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem
-
+    background: map-get($colors , secondary);
+    display: inline-block;
 }
 
+    p{
+     color: map-get($colors, colortext);   
+    }

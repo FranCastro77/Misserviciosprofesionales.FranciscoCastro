@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contactoyconsultas</title>
+    <meta name="description" content="Espacio para que pueda enviarle comentarios o consultas al consultor Francisco Castro, junto con sus datos para que se pueda establecer contacto, en caso de resultar necesario">
+    <meta name="keywords" content="CONTACTO, CONSULTAS, COMENTARIOS, DATOS, CONSULTORIA, TAX, IMPUESTOS, INTERNACIONAL, DERECHO TRIBUTARIO, FINANZAS, EVOLUCION TIPO DE CAMBIO, ASESORAMIENTO">
+    <title>Francisco Castro - Consultor - Déjenos sus comentarios o consultas junto a sus datos de contacto para poder comunicarnos</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
@@ -22,12 +24,8 @@
             <ul class="menu">
                 <li class="menu__item">
                     <a href="Quiensoy.html" class="menu__link">Quien soy</a></li>
-                <!-- <li class="menu__item">
-                    <a href="public/proyectosimplementados.html" class="menu__link">Mis proyectos</a></li> -->
                 <li class="menu__item">
                     <a href="servicios.html" class="menu__link">Portfolio</a></li>
-                <!-- <li class="menu__item">
-                    <a href="public/contactoyconsultas.html" class="menu__link">Contacto & Consultas</a></li> -->
                 <li class="menu__item">
                     <a href="herramientasutiles.html" class="menu__link">Útiles</a></li>
             </ul>
@@ -35,96 +33,87 @@
         </nav> 
     </header>
 
-    <h1>CONSULTAS Y CONTACTO</h1>
-    
-   <section class="formulario">
-        <form class="form">
-            <div class="labels">
-                <p>
-                    <label for="nombre_apellido">Nombre y Apellido:</label>
-                    <input type="text" name="nombre_apellido"/>
-                </p>
-            </div>
-            
-           <div class="labels">
-                <p>
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" name="email"placeholder="nombre@ejemplo.com"/>
-                </p>
-           </div>
-            
-           <div class="labels">
-                <p>
-                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" name="tel"/>
-                </p>
-           </div>
-            
-           <div class="labels">
-                <p>
-                    <label for="ocupacion">Ocupacion</label>
-                    <select name="select" id="">
-                        <option value="Estudiante">Estudiante</option>
-                        <option value="Profesional">Profesional</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </p>
-           </div>
-            
+   <section class="formulario"> 
 
-            <div class="labels">
-                <h3>Déjenos su consulta</h3>
-                <textarea name="textarea" rows="4" cols="50">Ingrese su consulta aquí</textarea>
-            </div>
+       <form class="form">
+        <div class="labeldatos">
+            <p>
+                <label for="nombre_apellido">Nombre y Apellido:</label>
+                <input type="text" name="nombre_apellido" size="50%"/>
+            </p>
+        </div>
+        
+       <div class="labeldatos">
+            <p>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" name="email"placeholder="nombre@ejemplo.com" size="50%"/>
+            </p>
+       </div>
+        
+       <div class="labeldatos">
+            <p>
+                 <label for="telefono">Teléfono:</label>
+                <input type="tel" name="tel"/>
+            </p>
+       </div>
+        
+       <div class="labeldatos">
+            <p>
+                <label for="ocupacion">Ocupacion</label>
+                <select name="select" id="">
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Profesional">Profesional</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </p>
+       </div>
+       </form>
+
+       <form class="form">
+        <div class="labelconsulta">
+                <p>Déjenos su consulta</p>
+                <textarea name="textarea" rows="10" cols="75">Ingrese su consulta aquí</textarea>
+        </div>
             
-            <div class="labels">
+            <div class="labelconsulta">
                 <p class="tituloform">
-                    <h3><label for="Desea recibir novedades relacionadas a su consulta?">Desea recibir novedades relacionadas a su consulta?</label></h3>
+                    <p><label for="Desea recibir novedades relacionadas a su consulta?">Desea recibir novedades relacionadas a su consulta?</label></p>
                         <p><label for="si">SI</label>
                         <input type="radio" name="Desea recibir novedades relacionadas a su consulta?" value="Si"/> </p>
-                        <p><label for="no">NO</label> 
+                        <p><label for="no">NO</label>
                         <input type="radio" name="Desea recibir novedades relacionadas a su consulta?" value="No"/></p>
-                        <p><label for="contáctenme primero">Contáctenme primero</label> 
+                        <p><label for="contáctenme primero">Contáctenme primero</label>
                         <input type="radio" name="Desea recibir novedades relacionadas a su consulta?" value="Contáctenme primero"/></p>
                 </p>
             </div>
-            
-            <div>
-                <p>
-                    <form action="">
-                     
-                    </form>
-                    <input type="submit" value="Enviar Formulario">
-                    <input type="reset" value="Limpiar Formulario">
-                </p>
-            </div>
-     
-            
-            
-
-        </form>
-
+        </form> 
+       </form>
    </section>
 
-<!-- <div>
-    <table border cellpadding="10px" cellspacing="5px">
-        <tr>
-            <td><a href="Quiensoy.html">Ir a Quien soy</a></td>
-            <td><a href="servicios.html">Ir a Servicios></a></td>
-            <td> <a href="contactoyconsultas.html">Ir a Contacto y consultas></a></td>
-            <td> <a href="herramientasutiles.html">Ir a Herramientas útiles></a></td> 
-        </tr>    
-    </table>
-</div> -->
+   <div class="enviar" >
+    <form action="">
+        <input type="submit" value="Enviar Formulario">
+        <input type="reset" value="Limpiar Formulario">
+    </form>
+   </div>
+   
+
+<hr>
+
 <div class="inicio">
-        <a href="../index.html">Volver</a>
+    <form action="../index.html">
+        <button style="background-color: rgb(125, 206, 162)" submit">Home</button>
+    </form>
 </div>
 
 <footer>
     <div class="footer">
-        <h3>Redes Sociales</h3>
-        <h3>Todos los derechos reservados</h3>
-        <h3>Datos de contacto</h3>
+        <a href="https://www.linkedin.com/in/francisco-orlando-castro-25aa881a/" target="_blank">
+            <img src="../pictures/linked-in-2668700_960_720.webp" width="50rem" height="50rem">
+        </a>
+        <p>
+        Año 2022 - Todos los derechos reservados
+        </p>
     </div>
 </footer>
 </body>

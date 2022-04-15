@@ -50,7 +50,7 @@ header .navbar {
     gap: 1rem; }
   header .navbar .menu__item .menu__link {
     color: #fff;
-    font-size: 1em;
+    font-size: 1.5em;
     transition: transform 5s ease-in; }
     header .navbar .menu__item .menu__link:hover {
       font-size: 2em;
@@ -68,65 +68,89 @@ footer {
   padding: 0 auto;
   align-items: center;
   text-align: center;
-  background: radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem; }
+  background: #fff;
+  display: inline-block; }
+
+p {
+  color: #0c1b30; }
 
 /*VIEWS */
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 4fr;
-  background-color: #fff;
+  background: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   grid-column-gap: 2rem;
   grid-row-gap: 1rem;
   align-items: center;
   text-align: center;
   font-size: 1em; }
-  section .titulonovedades, section .novedades, section .titulolinks {
+  section .titulonovedades, section .novedades, section .titulolinks, section .insertlink {
     font-size: 2em;
     margin-left: 1rem;
-    border: solid 0.5rem #6789ba; }
-  section .titulonovedades h3, section .novedades h3, section .titulolinks h3 {
+    border: solid 0.2rem black;
+    background-color: #12ebe4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  section .titulonovedades h3, section .novedades h3, section .titulolinks h3, section .insertlink h3 {
     color: #0c1b30; }
   section .novedades {
     text-decoration: none;
     display: inline-block;
     list-style: none;
     align-content: center;
-    padding: 0%; }
+    padding: 0%;
+    background-image: linear-gradient(to left bottom, #19f0dc, #00eccc, #00e7bc, #00e2aa, #06dd97, #02d493, #00cb8f, #00c28b, #00b391, #00a492, #009490, #008489);
+    border: none; }
   section .novedades h4 {
     color: #0c1b30; }
+  section .novedades .menu__link {
+    color: #0c1b30;
+    font-size: 1em;
+    text-align: center;
+    align-items: center; }
   section .novedades p {
     color: #0c1b30; }
+  section .titulolinks {
+    margin-right: 1rem; }
   section .titulolinks h3 {
     color: #0c1b30; }
-  section .insertlink p {
-    color: #0c1b30; }
+  section .insertlink a {
+    text-decoration: none;
+    color: #0c1b30;
+    text-decoration: underline;
+    padding-top: 3rem; }
+  section .insertlink iframe {
+    position: center;
+    padding-bottom: 1.2rem;
+    padding-top: 1.2rem; }
   section .insertlink {
-    font-size: 2em;
+    font-size: 3em;
     height: 446px;
     width: 450,5px;
     margin-right: 1rem;
-    border: solid 0.5rem #6789ba;
     text-align: center;
-    align-content: center; }
+    align-content: center;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 1em;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
+    border: none; }
 
 .banner {
   text-align: center;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  border: solid 0.5rem #6789ba;
-  display: grid;
-  grid-template-rows: 1fr;
-  background-color: #c89bdb; }
+  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
+  height: 4rem; }
 
-.banner h3 {
-  color: black; }
+.enlaces .menu__link {
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  align-items: center; }
 
 @media screen and (max-width: 460px) {
   .insertlink {
@@ -155,11 +179,12 @@ section {
     color: #646664; } }
 
 .aboutme h2 {
-  border: solid 1rem #6789ba;
+  border: solid 0.2rem #6789ba;
   color: black;
-  font-size: 2em; }
+  font-size: 2em;
+  text-align: center; }
 
-.aboutme div {
+.aboutme article {
   color: black;
   align-items: center;
   text-align: justify;
@@ -168,9 +193,14 @@ section {
 .menuabout .menu__item {
   text-align: center; }
 
-.inicio {
+.inicio button {
   text-align: end;
-  background-color: #fff; }
+  color: black; }
+
+hr {
+  min-width: 100%;
+  height: 0.5rem;
+  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578); }
 
 .inicio h3 {
   text-decoration: none;
@@ -200,9 +230,24 @@ section {
   display: contents;
   text-decoration: none; }
 
+.aboutservicios article {
+  color: black;
+  align-items: center;
+  text-align: justify;
+  font-size: 2em; }
+
 .aboutservicios ul {
   text-decoration: none;
-  text-align: start; }
+  text-align: start;
+  align-items: center;
+  text-align: justify;
+  font-size: 2em; }
+
+.aboutservicios h2 {
+  border: solid 0.2rem #6789ba;
+  color: black;
+  font-size: 2em;
+  text-align: center; }
 
 .inicio {
   text-align: end;
@@ -224,23 +269,32 @@ section {
     height: 155rem; } }
 
 .formulario {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr; }
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  background-color: #12ebe4;
+  justify-content: center; }
 
-.labels {
-  row-gap: 2rem; }
+.form {
+  border: solid 0.2rem black;
+  background-image: linear-gradient(to left bottom, #19f0dc, #00eccc, #00e7bc, #00e2aa, #06dd97, #02d493, #00cb8f, #00c28b, #00b391, #00a492, #009490, #008489); }
 
-.labels p {
-  color: #0c1b30;
-  font-size: 2em; }
+.labeldatos {
+  font-size: 3rem;
+  align-content: left; }
 
-.labels h3 {
-  font-size: 2.5em;
+.labelconsulta {
+  font-size: 2rem;
+  align-items: left; }
+
+.labelconsulta p {
+  font-size: 1em;
   color: #0c1b30; }
 
-.labels .tituloform {
-  display: inline-flex; }
+.enviar {
+  background-color: #12ebe4;
+  align-items: center; }
 
 .inicio {
   text-align: end;
@@ -261,22 +315,27 @@ section {
 
 .tabla {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   text-align: center;
-  margin: auto; }
+  margin: auto;
+  padding-top: 2rem; }
 
-.tabla h2 {
+.tipoimpuesto h3 {
+  color: #0c1b30; }
+
+.titulotabla h2 {
   color: #0c1b30;
-  font-size: 3em; }
+  font-size: 2em;
+  text-align: center; }
 
 .tabla th {
   color: #0c1b30;
-  font-size: 3em; }
+  font-size: 1.5em; }
 
 .tabla td {
   color: #0c1b30;
-  font-size: 3em; }
+  font-size: 1em; }
 
 .inicio {
   text-align: end;
