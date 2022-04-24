@@ -4,3 +4,12 @@
     font-size: $font;
 
 }
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start, $gap: 0, $wrap: wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+    flex-wrap: $wrap; 
+}

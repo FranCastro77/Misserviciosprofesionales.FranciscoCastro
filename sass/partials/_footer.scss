@@ -2,10 +2,11 @@ footer{
     padding: 0 auto;
     align-items: center;
     text-align: center;
-    background: map-get($colors , secondary);
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    background-color: map-get($colors, banner) ;
 }
 
     p{
-     color: map-get($colors, colortext);   
+     color: black;   
     }

@@ -1,4 +1,4 @@
-    $principal: #6789ba;
+    $principal: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
     $secondary: #fff;
     $textcolor: #0c1b30;
     $linear-gdt: radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe);
@@ -6,16 +6,17 @@
     $font-secondary: "Roboto+COndensed", cursive;
 
     $colors:(
-        primary:#6789ba,
+        primary: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339),
         secondary:#fff,
         colortext:#0c1b30,
         linear:radial-gradient(circle, #381480, #3c3291, #444ba0, #5062ad, #6179b8, #6d86bc, #7b93c0, #8aa0c3, #94a7c2, #9eaec1, #aab4bf, #b6babe),
         centralcolor: #CDC8E6,
-        bordercolor: black,
+        bordercolor:linear-gradient(to bottom, #d37931, #d98f22, #d9a70b, #d3c000, #c4da00),
         recuadro:#12ebe4,
         cuadro: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578),
-        cuadrohome:linear-gradient(to left bottom, #19f0dc, #00eccc, #00e7bc, #00e2aa, #06dd97, #02d493, #00cb8f, #00c28b, #00b391, #00a492, #009490, #008489)
-        );
+        cuadrohome:linear-gradient(to left bottom, #19f0dc, #00eccc, #00e7bc, #00e2aa, #06dd97, #02d493, #00cb8f, #00c28b, #00b391, #00a492, #009490, #008489),
+        banner:#3bb4c1
+        )
     
 
 

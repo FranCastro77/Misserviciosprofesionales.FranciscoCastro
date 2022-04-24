@@ -1,82 +1,68 @@
-section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 4fr;
-    background: map-get($colors , secondary);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    grid-column-gap: 2rem;
-    grid-row-gap: 1rem;
-    @include helper($font:1em);
+.navbar .nombre{
+    flex-basis: 50%;
+}
     
+    .section{
+        display: flex;
+        flex-direction: row;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @include helper($font:1em);
+        padding: 0, auto;
+        justify-content:space-around;
+        margin-top: 5rem;
+        margin-right: 5rem;
+        margin-left: 5rem;
+        margin-bottom: 5rem;
     
     .titulonovedades{
-        font-size: 2em;
+        font-size: 1.2em;
         margin-left: 1rem;
-        border: solid 0.2rem map-get($colors, bordercolor);
-        background-color: map-get($colors, recuadro);
+        margin-right: 1rem  ;
+        border: solid 0.2rem map-get($colors, secondary);
+        border-radius: 2rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     .titulonovedades h3{
-        color: $textcolor;
+        color: map-get($colors , secondary);
+        font-size: 2em;
+        text-align: center;
     }
     
+    .titulonovedades h4{
+        color:map-get($colors , secondary);
+        font-size: 1.5em;
+        text-decoration: underline;
+    }
     
     .novedades{
         text-decoration: none;
         display: inline-block;
         list-style: none;
         align-content: center;
+        text-align: center;
         padding: 0%;
         @extend.titulonovedades;
-        background-image: map-get($colors, cuadrohome);
         border: none;
+        color: map-get($colors , secondary);
     }
-    
-    .novedades h4{
-        color:$textcolor;
+
+    .novedades p{
+        color:map-get($colors , secondary);
+        font-size: 1em;
     }
     
     .novedades .menu__link{
-        color: map-get($colors, colortext);
+        color: map-get($colors, secondary);
         font-size: 1em;
         text-align: center;
         align-items: center;
+        list-style-type: none;
     }
 
-
-    .novedades p{
-        color:$textcolor;
-    
-    }
-    
     .titulolinks{
         @extend.titulonovedades;
-        margin-right: 1rem;
-    }
-    
-    .titulolinks h3{
-        color: $textcolor;
-    }
-    
-    .insertlink a{
-        text-decoration: none;
-        color: map-get($colors, colortext );
-        text-decoration: underline;
-        padding-top: 3rem;
-    }
-    .insertlink iframe{
-        position: center;
-        padding-bottom:1.2rem;
-        padding-top: 1.2rem;
-    }
-    
-
-    .insertlink{
-        @extend.titulonovedades;
         font-size: 3em;
-        height: 446px;
-        width: 450,5px;
         margin-right: 1rem;
         text-align: center;
         align-content: center;
@@ -84,27 +70,37 @@ section{
         list-style-type: none;
         font-size: 1em;
         text-align: center;
-        background-image: map-get($colors, cuadro);
-        border: none;
-        
-        }
-}
+        height: 60rem;
+        max-width: 80rem;
+    }
 
-.banner{
-    text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    background-image: map-get($colors, cuadro);
-    height: 4rem;
-}
+    .titulolinks h3{
+        color: map-get($colors , secondary);
+        font-size: 2em;
+    }
+    
+    .insertlink iframe{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }    
+ 
+    .insertlink a{
+        text-decoration: none;
+        color: map-get($colors, secondary);
+        text-decoration: underline;
+        padding-top: 3rem;
+    }
 
-    .enlaces .menu__link{
-    color: map-get($colors, secondary);
+
+.cotizaciones {
+    display: flex;
+    justify-content: space-evenly;
     font-size: 2em;
-    text-align: center;
-    align-items: center;
+    margin-bottom: 3rem;
 }
+
+
+
 
 @media screen and (max-width: 460px){
 
@@ -127,4 +123,5 @@ section{
     .menu{
         font-size: 2em;
      }
+    }
 }

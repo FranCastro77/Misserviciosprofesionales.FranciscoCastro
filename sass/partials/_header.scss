@@ -1,45 +1,49 @@
 header .navbar{
     min-width: 10vh;
-    padding: 0 0rem;
-    align-items: center;
-    background: map-get($colors , linear);
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
-
-    .menu .menu__item{
-        font-size: 1em;
-        padding: 1rem;
-        text-align: center;
-    }   
-
-    .head{
-        background-color: $font-secondary;
-        align-items: center;
-        text-align: center;
-        font-size: 3em;
-        gap: 1rem;
-    }
-    
-    .menu__item .menu__link{
-        color: map-get($colors, secondary);
-        font-size: 1.5em;
-        transition: transform 5s ease-in;  
-
-        &:hover{
-            font-size: 2em;
-            text-transform: uppercase;  
-        }
+    @include flex(row, space-around, center, 1.5rem, nowrap);
+    padding: 0 1rem;
+    border-bottom: 0.3rem solid rgb(172, 94, 131);  
     }
 
-    .logo{
-        transition: transform 5s ease-in-out;
-        
-        &:hover{
-            transform: scale(1.5);
-        }
-    }
-
+.menu .menu__item{
+    border: 0.3rem solid map-get($colors, primary);
 }
+
+    .navbar h1{
+        color: map-get($colors, secondary);
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .menu__item .menu__link{
+        flex-direction: row;
+        color: map-get($colors, secondary);
+        border: 0.3rem solid map-get($colors, primary);
+        flex-basis: 30%;
+        font-size: 1.5em; 
+        text-decoration: none;
+        list-style-type: none;
+        // transition: transform 5s ease-in;
+        line-height: 3.5rem;
+
+        &:hover{
+            transition: transform 5s ease-in;
+            border-bottom: 0.3rem solid map-get($colors, secondary);   
+            }
+        }
+
+    
+.menu .menu__home{
+    background-image: map-get($colors, primary);
+    position:fixed;
+    display: flex;
+    align-self: flex-end;
+    margin-top: 1rem;
+    border: 0.3rem solid map-get($colors, secondary);
+    font-size: 1.5em;
+}
+
+
 
 @media screen and (max-width: 460px){
     .head{
@@ -47,7 +51,7 @@ header .navbar{
     }
 }
 
-    
+   
 
 
 
