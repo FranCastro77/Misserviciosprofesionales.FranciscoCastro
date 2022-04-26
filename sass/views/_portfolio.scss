@@ -8,10 +8,31 @@
     text-decoration: none;
 }
 
-.aboutservicios article{
-        color: black;
-        @include helper($textalign: justify);
-    }
+// .aboutservicios article{
+//         color: black;
+//         @include helper($textalign: justify);
+//     }
+
+.aboutservicios p{
+    color: map-get($colors , secondary);
+    font-size: 2em;
+    text-align: justify;
+}
+
+.aboutservicios h2{
+    border: solid 0.2rem $principal;
+    color: map-get($colors , secondary);
+    font-size: 2em;
+    text-align: center;
+}
+
+.aboutservicios h3{
+    border-bottom: solid 0.2rem map-get($colors, secondary);
+    color: map-get($colors , secondary);
+    font-size: 1.2em;
+    text-align: left;
+}
+
 
 .aboutservicios ul{
     text-decoration: none;
@@ -19,35 +40,39 @@
     @include helper($textalign: justify)
 }
 
-.aboutservicios h2{
-    border: solid 0.2rem $principal;
-    color: black;
-    font-size: 2em;
-    text-align: center;
+.aboutservicios ol{
+    color: map-get($colors , secondary);
+    text-align: justify;
+    font-size: 1em;
+    padding: 1.5rem 1.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 5rem;
 }
+
+
 
 hr{
     @extend hr;
 }
 
-.inicio{
-    text-align: end;
-    background-color: $secondary;
+// .inicio{
+//     text-align: end;
+//     background-color: $secondary;
     
-}
+// }
 
-.inicio h3{
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-}
+// .inicio h3{
+//     text-decoration: none;
+//     display: inline-block;
+//     font-size: 1em;
+// }
 
-.inicio a{
-    color: $font-secondary;
-    background-color: rgb(91, 129, 211);
-}
+// .inicio a{
+//     color: $font-secondary;
+//     background-color: rgb(91, 129, 211);
+// }
 
-@media screen and (max-width: 460px){
+@media screen and (max-width: 320px){
     
    .menuservicios{
     font-size: 2em;

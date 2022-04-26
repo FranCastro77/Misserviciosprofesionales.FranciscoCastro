@@ -8,39 +8,23 @@
 }
 
 .tipoimpuesto h3{
-    color: map-get($colors, colortext);
+    color: map-get($colors, secondary);
     
 }
 
 .titulotabla h2{
-    color: $textcolor;
+    color: map-get($colors, secondary);
     font-size: 2em;
     text-align: center;
 }
 
 .tabla th{
-    color: $textcolor;
+    color: map-get($colors, secondary);
     font-size: 1.5em;
 }
 
 .tabla td{
-    color: $textcolor;
+    color: map-get($colors, secondary);
     font-size: 1em;
 }
 
-.inicio{
-    text-align: end;
-    background-color: $secondary;
-    
-}
-
-.inicio h3{
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-}
-
-.inicio a{
-    color: $font-secondary;
-    background-color: rgb(91, 129, 211);
-}

@@ -4,11 +4,11 @@
     
     .section{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         @include helper($font:1em);
         padding: 0, auto;
-        justify-content:space-around;
+        justify-content: space-between;
         margin-top: 5rem;
         margin-right: 5rem;
         margin-left: 5rem;
@@ -21,6 +21,10 @@
         border: solid 0.2rem map-get($colors, secondary);
         border-radius: 2rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        justify-items: center;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
     }
 
     .titulonovedades h3{
@@ -33,11 +37,12 @@
         color:map-get($colors , secondary);
         font-size: 1.5em;
         text-decoration: underline;
+        text-align: center;
     }
-    
+
     .novedades{
         text-decoration: none;
-        display: inline-block;
+        display:flex;
         list-style: none;
         align-content: center;
         text-align: center;
@@ -45,11 +50,21 @@
         @extend.titulonovedades;
         border: none;
         color: map-get($colors , secondary);
+        justify-content: space-around;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: solid 0.2rem map-get($colors, primary);
     }
 
     .novedades p{
         color:map-get($colors , secondary);
         font-size: 1em;
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+
+        &:hover{
+            background-color: rgb(172, 94, 131);
+            }
     }
     
     .novedades .menu__link{
@@ -102,19 +117,19 @@
 
 
 
-@media screen and (max-width: 460px){
+@media screen and (max-width: 320px){
 
     .insertlink{
         height: 500px;  
     }
 
-    section{
-        height: 155rem;
-    }
-    
-    .novedades{
-        height: 140rem;
-    }
+        // section{
+        //     height: 155rem;
+        // }
+        
+    // .novedades{
+    //     height: 140rem;
+    // }
     
     .insertlink{
         height: 140rem;
