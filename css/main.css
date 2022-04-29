@@ -150,9 +150,10 @@ p {
     color: #fff;
     font-size: 1em;
     padding-left: 1.8rem;
-    padding-right: 1.8rem; }
+    padding-right: 1.8rem;
+    border-radius: 2rem; }
     .section .novedades p:hover {
-      background-color: #ac5e83; }
+      background-color: #3bb4c1; }
   .section .novedades .menu__link {
     color: #fff;
     font-size: 1em;
@@ -185,7 +186,13 @@ p {
     display: flex;
     justify-content: space-evenly;
     font-size: 2em;
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+    gap: 5rem; }
+  .section .cotizaciones .menu__banner1 {
+    box-shadow: 0.3rem 0.3rem 0.3rem #fff; }
+  .section .cotizaciones .menu__banner2 {
+    box-shadow: -0.3rem 0.3rem 0.3rem #fff; }
   @media screen and (max-width: 320px) {
     .section .insertlink {
       height: 500px; }
@@ -238,7 +245,9 @@ hr {
   position: relative;
   display: flex;
   justify-content: space-evenly;
-  column-gap: 2rem; }
+  column-gap: 2rem;
+  margin-top: 12rem;
+  margin-bottom: 15rem; }
 
 .container .card {
   position: relative;
@@ -313,49 +322,78 @@ hr {
   color: #fff; }
 
 #resumen p {
-  color: #fff;
+  background-color: #fff;
+  color: black;
   text-align: justify;
-  font-size: 3em;
+  font-size: 2em;
   padding: 1.5rem 1.5rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  line-height: 4.5rem; }
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  justify-content: center;
+  margin-top: 15rem;
+  line-height: 5rem;
+  border: solid 0.2rem linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
+  border-radius: 2rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem #3bb4c1; }
 
 #resumen a {
   margin-bottom: 3.5rem;
   float: right;
   padding: 1.5rem;
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  margin-right: 15rem;
+  margin-bottom: 15rem; }
 
 #laboral p {
-  color: #fff;
+  background-color: #fff;
+  color: black;
   text-align: justify;
-  font-size: 3em;
+  font-size: 2em;
   padding: 1.5rem 1.5rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  line-height: 4.5rem; }
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  justify-content: center;
+  margin-top: 15rem;
+  line-height: 5rem;
+  border: solid 0.2rem linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
+  border-radius: 2rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem #3bb4c1; }
 
 #laboral a {
   margin-bottom: 3.5rem;
+  margin-right: 3rem;
   float: right;
   padding: 1.5rem;
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  margin-right: 15rem;
+  margin-bottom: 20rem; }
 
 #academico p {
-  color: #fff;
+  background-color: #fff;
+  color: black;
   text-align: justify;
-  font-size: 3em;
+  font-size: 2em;
   padding: 1.5rem 1.5rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  line-height: 4.5rem; }
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  justify-content: center;
+  margin-top: 18rem;
+  line-height: 5rem;
+  border: solid 0.2rem linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
+  border-radius: 2rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem #3bb4c1; }
 
 #academico a {
   margin-bottom: 3.5rem;
+  margin-right: 3rem;
   float: right;
   padding: 1.5rem;
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  margin-right: 15rem;
+  margin-bottom: 5rem; }
 
 @media screen and (max-width: 320px) {
   .tituloenlace {
@@ -409,7 +447,10 @@ hr {
 .aboutservicios p {
   color: #fff;
   font-size: 2em;
-  text-align: justify; }
+  text-align: justify;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
 
 .aboutservicios h2 {
   border: solid 0.2rem linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
@@ -428,7 +469,9 @@ hr {
   text-align: start;
   align-items: center;
   text-align: justify;
-  font-size: 2em; }
+  font-size: 2em;
+  margin-left: 7rem;
+  margin-right: 9rem; }
 
 .aboutservicios ol {
   color: #fff;
@@ -456,13 +499,15 @@ hr {
   border: solid 0.2rem linear-gradient(to bottom, #d37931, #d98f22, #d9a70b, #d3c000, #c4da00);
   border-radius: 2rem;
   background-image: linear-gradient(to left bottom, #19f0dc, #00eccc, #00e7bc, #00e2aa, #06dd97, #02d493, #00cb8f, #00c28b, #00b391, #00a492, #009490, #008489);
-  margin-left: 8rem;
-  margin-right: 8rem;
+  padding: 0 auto;
   margin-top: 8rem;
-  margin-top: 4rem; }
+  margin-top: 4rem;
+  min-width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
 
 .labeldatos {
-  font-size: 3rem;
+  font-size: 2rem;
   align-content: left; }
 
 .labelconsulta {
@@ -471,7 +516,7 @@ hr {
   margin-top: 4rem; }
 
 .labelconsulta p {
-  font-size: 1em;
+  font-size: 2em;
   color: #0c1b30; }
 
 .enviar {
@@ -508,3 +553,7 @@ hr {
 .tabla td {
   color: #fff;
   font-size: 1em; }
+
+table {
+  border-collapse: separate;
+  border-spacing: 5rem; }

@@ -37,6 +37,8 @@ hr{
     display: flex;
     justify-content: space-evenly;
     column-gap: 2rem;
+    margin-top: 12rem;
+    margin-bottom: 15rem;
 }
 
 .container .card{
@@ -124,15 +126,21 @@ hr{
     color: #fff;
 }
 
-
 #resumen p{
-    color: map-get($colors , secondary);
+    background-color: map-get($colors , secondary);
+    color: black;
     text-align: justify;
-    font-size: 3em;
+    font-size: 2em;
     padding: 1.5rem 1.5rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    line-height: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    justify-content: center;
+    margin-top: 15rem;
+    line-height: 5rem;
+    border: solid 0.2rem map-get($colors, primary);
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem map-get($colors, banner);
 }
 
 #resumen a{
@@ -140,40 +148,62 @@ hr{
     float: right;
     padding: 1.5rem;
     font-size: 1.8em;
+    margin-right: 15rem;
+    margin-bottom: 15rem;
 }
 
 #laboral p{
-    color: map-get($colors , secondary);
+    background-color: map-get($colors , secondary);
+    color: black;
     text-align: justify;
-    font-size: 3em;
+    font-size: 2em;
     padding: 1.5rem 1.5rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    line-height: 4.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    justify-content: center;
+    margin-top: 15rem;
+    line-height: 5rem;
+    border: solid 0.2rem map-get($colors, primary);
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem map-get($colors, banner);
 }
 
 #laboral a{
     margin-bottom: 3.5rem;
+    margin-right: 3rem;
     float: right;
     padding: 1.5rem;
     font-size: 1.8em;
+    margin-right: 15rem;
+    margin-bottom: 20rem;
 }
 
 #academico p{
-    color: map-get($colors , secondary);
+    background-color: map-get($colors , secondary);
+    color: black;
     text-align: justify;
-    font-size: 3em;
+    font-size: 2em;
     padding: 1.5rem 1.5rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    line-height: 4.5rem;    
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    justify-content: center;
+    margin-top: 18rem;
+    line-height: 5rem;
+    border: solid 0.2rem map-get($colors, primary);
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem map-get($colors, banner);
 }
 
 #academico a{
     margin-bottom: 3.5rem;
+    margin-right: 3rem;
     float: right;
     padding: 1.5rem;
     font-size: 1.8em;
+    margin-right: 15rem;
+    margin-bottom: 5rem;
 }
 @media screen and (max-width: 320px){
     

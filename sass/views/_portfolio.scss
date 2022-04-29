@@ -17,6 +17,9 @@
     color: map-get($colors , secondary);
     font-size: 2em;
     text-align: justify;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .aboutservicios h2{
@@ -37,7 +40,9 @@
 .aboutservicios ul{
     text-decoration: none;
     text-align: start;
-    @include helper($textalign: justify)
+    @include helper($textalign: justify);
+    margin-left: 7rem;
+    margin-right: 9rem;
 }
 
 .aboutservicios ol{

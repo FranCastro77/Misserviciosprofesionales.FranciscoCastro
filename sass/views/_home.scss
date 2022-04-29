@@ -61,9 +61,10 @@
         font-size: 1em;
         padding-left: 1.8rem;
         padding-right: 1.8rem;
+        border-radius: 2rem;
 
         &:hover{
-            background-color: rgb(172, 94, 131);
+            background-color: map-get($colors, banner);
             }
     }
     
@@ -112,9 +113,17 @@
     justify-content: space-evenly;
     font-size: 2em;
     margin-bottom: 3rem;
+    margin-top: 4rem;
+    gap: 5rem;
 }
 
+.cotizaciones .menu__banner1{
+    box-shadow: 0.3rem 0.3rem 0.3rem map-get($colors, secondary);
+}
 
+.cotizaciones .menu__banner2{
+    box-shadow: -0.3rem 0.3rem 0.3rem map-get($colors, secondary);
+}
 
 
 @media screen and (max-width: 320px){
