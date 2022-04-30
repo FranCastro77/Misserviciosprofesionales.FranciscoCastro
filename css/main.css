@@ -105,6 +105,10 @@ p {
   footer {
     width: 100%; } }
 
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+  footer {
+    width: 100%; } }
+
 /*VIEWS */
 .section {
   display: flex;
@@ -379,26 +383,25 @@ hr {
   #academico {
     display: none; }
   .container {
+    display: flex;
+    flex-direction: column;
     column-gap: 2rem;
     margin-top: 8rem;
     margin: 0 auto; } }
 
-@media screen and (max-width: 320px) and (max-width: 768px) and (min-width: 320px) {
-  .tituloenlace {
-    font-size: 0.2em; }
-  .menu .menu__item {
-    font-size: 2em; }
-  .menuopcion {
-    font-size: 2em; }
-  .aboutme {
-    height: 155rem; }
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  #resumen {
+    display: none; }
+  #laboral {
+    display: none; }
+  #academico {
+    display: none; }
   .container {
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly; }
-  .card .cards {
-    display: none; } }
+    column-gap: 2rem;
+    margin-top: 8rem;
+    margin: 0 auto; } }
 
 button {
   right: 3rem;
@@ -459,6 +462,12 @@ button a {
   margin-bottom: 5rem; }
 
 @media screen and (max-width: 320px) {
+  .menuservicios {
+    font-size: 2em; }
+  .aboutservicios {
+    height: 155rem; } }
+
+@media screen and (max-width: 480px) and (min-width: 320px) {
   .menuservicios {
     font-size: 2em; }
   .aboutservicios {
@@ -557,6 +566,14 @@ table {
   border-spacing: 5rem; }
 
 @media screen and (max-width: 320px) {
+  .tabla {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    padding-top: 2rem; } }
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
   .tabla {
     display: flex;
     flex-direction: column;
