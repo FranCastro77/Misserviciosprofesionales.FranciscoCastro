@@ -1,13 +1,9 @@
 header .navbar{
-    min-width: 10vh;
+    min-width: 10vw;
     @include flex(row, space-around, center, 1.5rem, nowrap);
-    padding: 0 1rem;
-    border-bottom: 0.3rem solid rgb(172, 94, 131);  
+    padding: 0 5rem;
+    border-bottom: 0.3rem solid white; 
     }
-
-.menu .menu__item{
-    border: 0.3rem solid map-get($colors, primary);
-}
 
     .navbar h1{
         color: map-get($colors, secondary);
@@ -23,38 +19,50 @@ header .navbar{
         font-size: 1.5em; 
         text-decoration: none;
         list-style-type: none;
-        // transition: transform 5s ease-in;
         line-height: 3.5rem;
-
+        transition: ease-in-out 3s;
+   
         &:hover{
-            transition: transform 5s ease-in;
-            border-bottom: 0.3rem solid map-get($colors, secondary);   
+            border-bottom: 0.1rem solid map-get($colors, secondary);   
             }
         }
 
+    .menu ul{
+        margin: 0% 0%;
+    }
     
-.menu .menu__home{
-    background-image: map-get($colors, primary);
+.menu__item .menu__home{
+    background-color: map-get($colors, secondary);
+    color: black;
     position:fixed;
     display: flex;
     align-self: flex-end;
-    margin-top: 1rem;
-    border: 0.3rem solid map-get($colors, secondary);
+    margin-top: 2rem;
     font-size: 1.5em;
+    border: 0.3rem solid black;
+    transition: ease-in-out 4s;
 }
 
 
+@media screen and (max-width: 320px){
+    .navbar h1{
+        font-size: 2em;
+        flex-basis: 10%;
+    }
 
-@media screen and (max-width: 460px){
-    .head{
-        font-size: 0.2em;
+    .menu__item .menu__link{
+        font-size: 1em;
+        line-height: 4rem;
+
+    .navbar .logo{
+        display: contents;
+        margin-left: auto;
+        
     }
 }
 
-   
 
 
 
-
-
+}
 

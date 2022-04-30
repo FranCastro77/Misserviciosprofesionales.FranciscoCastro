@@ -3,10 +3,23 @@ footer{
     align-items: center;
     text-align: center;
     display: flex;
-    justify-content: center;
-    background-color: map-get($colors, banner) ;
+    
+    justify-content: space-evenly;
+    background-image: map-get($colors, primary) ;
+    width: 100vw;
+    min-height: 5%;
+    
 }
 
     p{
-     color: black;   
+     color: map-get($colors, secondary);
+     text-align: center;
+    }
+
+
+    @media screen and (max-width: 320px){
+        footer{
+            width: 100%;
+        }
+    
     }

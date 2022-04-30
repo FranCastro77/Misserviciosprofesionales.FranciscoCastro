@@ -1,29 +1,15 @@
-
-.navbar .tituloenlace{
-    text-align: center;   
-}
-
-.aboutme h2{
-    border: solid 0.2rem $principal;
-    color: black;
-    font-size: 2em;
-    text-align: center;
-}
-
-.aboutme article{
-    color: black;
-    @include helper($textalign: justify)
-}
-
-.menuabout .menu__item{
-    text-align: center;
-}
-
-.menuopcion .menu__home{
-    list-style-type: none;
-    background-color:#fff;
+button{
+    right: 3rem;
+    background-image: map-get($colors, cuadro);
+    border: solid 0.2rem black;
+    border-radius: 2rem;
+    margin-top: 3rem;
     position: fixed;
-    right: 2rem; 
+    transition: ease-in-out 4s;
+}
+
+button a{
+    color: map-get($colors, secondary);
 }
 
 hr{
@@ -206,40 +192,25 @@ hr{
     margin-bottom: 5rem;
 }
 @media screen and (max-width: 320px){
+
+    #resumen{
+        display: none;
+    }
+
+    #laboral{
+        display: none;
+    }
     
-    .tituloenlace{
-        font-size: 0.2em;
+    #academico{
+        display: none;
     }
-
-    .menu .menu__item{
-        font-size: 2em;    
-    }
-
-    .menuopcion{
-        font-size: 2em;
-    }
-
-    .aboutme{
-    height: 155rem;
-    }
-
+    
     .container{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        column-gap: 2rem;
+        margin-top: 8rem;
+        margin: 0 auto;
     }
     
-    .card .cards{
-        display: none;
-    }
- 
-    .navbar .logo{
-        display: none;
-        margin-left: 4rem;
-    }
-
-}
 
 @media screen and (max-width: 768px) and (min-width: 320px) {
     .tituloenlace{
@@ -268,9 +239,5 @@ hr{
     .card .cards{
         display: none;
     }
- 
-    .navbar .logo{
-        display: none;
-        margin-left: 4rem;
-    }
+}
 }

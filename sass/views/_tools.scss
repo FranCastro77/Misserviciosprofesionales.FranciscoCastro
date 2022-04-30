@@ -1,3 +1,19 @@
+button{
+    right: 3rem;
+    background-image: map-get($colors, cuadro);
+    border: solid 0.2rem black;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    transition: ease-in-out 4s;
+    position: fixed;
+
+}
+
+button a{
+    color: map-get($colors, secondary);
+}
+
+
 .tabla{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -16,6 +32,7 @@
     color: map-get($colors, secondary);
     font-size: 2em;
     text-align: center;
+    margin-top: 8rem;
 }
 
 .tabla th{
@@ -31,4 +48,19 @@
 table{
     border-collapse: separate;
     border-spacing:  5rem;
+}
+
+
+@media screen and (max-width: 320px){
+
+    .tabla{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin:auto;
+        padding-top: 2rem;
+    }    
+
+
+
 }

@@ -1,5 +1,21 @@
+button{
+    right: 3rem;
+    background-image: map-get($colors, cuadro);
+    border: solid 0.2rem black;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    transition: ease-in-out 4s;
+    position: fixed;
+
+}
+
+button a{
+    color: map-get($colors, secondary);
+}
+
+
 .aboutservicios{
-    color: $textcolor;
+    color: map-get($colors , secondary);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -7,11 +23,6 @@
     display: contents;
     text-decoration: none;
 }
-
-// .aboutservicios article{
-//         color: black;
-//         @include helper($textalign: justify);
-//     }
 
 .aboutservicios p{
     color: map-get($colors , secondary);
@@ -23,10 +34,10 @@
 }
 
 .aboutservicios h2{
-    border: solid 0.2rem $principal;
     color: map-get($colors , secondary);
     font-size: 2em;
     text-align: center;
+    margin-top: 8rem;
 }
 
 .aboutservicios h3{
@@ -60,30 +71,15 @@ hr{
     @extend hr;
 }
 
-// .inicio{
-//     text-align: end;
-//     background-color: $secondary;
-    
-// }
-
-// .inicio h3{
-//     text-decoration: none;
-//     display: inline-block;
-//     font-size: 1em;
-// }
-
-// .inicio a{
-//     color: $font-secondary;
-//     background-color: rgb(91, 129, 211);
-// }
 
 @media screen and (max-width: 320px){
     
-   .menuservicios{
-    font-size: 2em;
-    }
-
-   .aboutservicios{
-    height: 155rem;
-    }
+    .menuservicios{
+     font-size: 2em;
+     }
+ 
+    .aboutservicios{
+     height: 155rem;
+     }
 }
+
