@@ -1,10 +1,8 @@
 button{
-    right: 3rem;
     background-image: map-get($colors, primary);
     border: solid 0.2rem black;
     margin-top: 3rem;
-    transition: ease-in-out 4s;
-
+    position: fixed;
 }
 
 button a{

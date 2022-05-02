@@ -1,6 +1,5 @@
 button{
-    right: 3rem;
-    background-color: map-get($colors, primary);
+    background-image: map-get($colors, primary);
     border: solid 0.2rem black;
     margin-top: 3rem;
     position: fixed;

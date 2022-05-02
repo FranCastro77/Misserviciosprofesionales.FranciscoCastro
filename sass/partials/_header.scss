@@ -9,6 +9,7 @@ header .navbar{
     .navbar h1{
         color: map-get($colors, secondary);
         font-size: 3em;
+        font-style:normal;
         text-align: center;
     }
 
@@ -17,6 +18,10 @@ header .navbar{
         color: map-get($colors, secondary);
         font-size: 2em;
         text-align: center;
+    }
+
+    .logo{
+        margin-bottom: 3rem;
     }
 
 
@@ -28,14 +33,17 @@ header .navbar{
         font-size: 1.2em; 
         text-decoration: none;
         list-style-type: none;
-        transition: ease-in-out 3s;
+        transition: ease-in-out 2s; 
    
         &:hover{
-            border-bottom: 0.1rem solid map-get($colors, secondary);   
+            text-transform: uppercase;
+            color: black;
+            background-color: map-get($colors, secondary);   
             }
         }
 
     .navbar ul{
-        @include flex(row, space-between, center, 1.5rem, nowrap);
+        @include flex(row, space-between, center, 5rem, nowrap);
+     padding-inline-start: 0;
     }
     
