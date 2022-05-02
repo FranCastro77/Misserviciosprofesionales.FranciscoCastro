@@ -1,7 +1,8 @@
 header .navbar{
     min-width: 10vw;
-    @include flex(row, space-around, center, 1.5rem, nowrap);
+    @include flex(column, space-around, center, 1.5rem, nowrap);
     padding: 0 5rem;
+    border: 0.1rem solid map-get($colors, primary);
     border-bottom: 0.3rem solid white; 
     }
 
@@ -11,15 +12,22 @@ header .navbar{
         text-align: center;
     }
 
+
+    .navbar h2{
+        color: map-get($colors, secondary);
+        font-size: 2em;
+        text-align: center;
+    }
+
+
     .menu__item .menu__link{
         flex-direction: row;
         color: map-get($colors, secondary);
-        border: 0.3rem solid map-get($colors, primary);
-        flex-basis: 30%;
-        font-size: 1.5em; 
+        border: 0.1rem solid map-get($colors, primary);
+        flex-basis: 25%;
+        font-size: 1.2em; 
         text-decoration: none;
         list-style-type: none;
-        line-height: 3.5rem;
         transition: ease-in-out 3s;
    
         &:hover{
@@ -27,48 +35,7 @@ header .navbar{
             }
         }
 
-    .menu ul{
-        margin: 0% 0%;
+    .navbar ul{
+        @include flex(row, space-between, center, 1.5rem, nowrap);
     }
     
-.menu__item .menu__home{
-    background-color: map-get($colors, secondary);
-    color: black;
-    position:fixed;
-    display: flex;
-    align-self: flex-end;
-    margin-top: 2rem;
-    font-size: 1.5em;
-    border: 0.3rem solid black;
-    transition: ease-in-out 4s;
-}
-
-// @media screen and (min-width: 610px){
-//     .navbar{
-//         display: contents;
-//     }
-
-
-// // @media screen and (max-width: 768px){
-// //     .navbar h1{
-// //         font-size: 2em;
-// //         flex-basis: 10%;
-// //     }
-
-// //     .menu__item .menu__link{
-// //         font-size: 1em;
-// //         line-height: 4rem;
-
-// //     .navbar .logo{
-// //         display: contents;
-// //         margin-left: auto;
-        
-// //     }
-// // }
-
-
-
-
-// }
-
-// }   

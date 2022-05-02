@@ -1,11 +1,9 @@
 button{
     right: 3rem;
-    background-image: map-get($colors, cuadro);
+    background-image: map-get($colors, primary);
     border: solid 0.2rem black;
-    border-radius: 2rem;
     margin-top: 3rem;
     transition: ease-in-out 4s;
-    position: fixed;
 
 }
 

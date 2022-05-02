@@ -1,21 +1,13 @@
 button{
     right: 3rem;
-    background-image: map-get($colors, cuadro);
+    background-color: map-get($colors, primary);
     border: solid 0.2rem black;
-    border-radius: 2rem;
     margin-top: 3rem;
     position: fixed;
-    transition: ease-in-out 4s;
 }
 
 button a{
     color: map-get($colors, secondary);
-}
-
-hr{
-    min-width: 100%;
-    height: 0.5rem;
-    background-image: map-get($colors, cuadro);
 }
 
 .container{

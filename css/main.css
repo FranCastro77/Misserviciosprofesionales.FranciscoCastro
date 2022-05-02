@@ -42,12 +42,13 @@ a {
 header .navbar {
   min-width: 10vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   gap: 1.5rem;
   flex-wrap: nowrap;
   padding: 0 5rem;
+  border: 0.1rem solid linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   border-bottom: 0.3rem solid white; }
 
 .navbar h1 {
@@ -55,32 +56,30 @@ header .navbar {
   font-size: 3em;
   text-align: center; }
 
+.navbar h2 {
+  color: #fff;
+  font-size: 2em;
+  text-align: center; }
+
 .menu__item .menu__link {
   flex-direction: row;
   color: #fff;
-  border: 0.3rem solid linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
-  flex-basis: 30%;
-  font-size: 1.5em;
+  border: 0.1rem solid linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
+  flex-basis: 25%;
+  font-size: 1.2em;
   text-decoration: none;
   list-style-type: none;
-  line-height: 3.5rem;
   transition: ease-in-out 3s; }
   .menu__item .menu__link:hover {
     border-bottom: 0.1rem solid #fff; }
 
-.menu ul {
-  margin: 0% 0%; }
-
-.menu__item .menu__home {
-  background-color: #fff;
-  color: black;
-  position: fixed;
+.navbar ul {
   display: flex;
-  align-self: flex-end;
-  margin-top: 2rem;
-  font-size: 1.5em;
-  border: 0.3rem solid black;
-  transition: ease-in-out 4s; }
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: nowrap; }
 
 footer {
   padding: 0 auto;
@@ -194,20 +193,13 @@ p {
 
 button {
   right: 3rem;
-  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
+  background-color: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   border: solid 0.2rem black;
-  border-radius: 2rem;
   margin-top: 3rem;
-  position: fixed;
-  transition: ease-in-out 4s; }
+  position: fixed; }
 
 button a {
   color: #fff; }
-
-hr {
-  min-width: 100%;
-  height: 0.5rem;
-  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578); }
 
 .container {
   position: relative;
@@ -397,11 +389,9 @@ hr {
 
 button {
   right: 3rem;
-  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
+  background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   border: solid 0.2rem black;
-  border-radius: 2rem;
   margin-top: 3rem;
-  transition: ease-in-out 4s;
   position: fixed; }
 
 button a {
@@ -467,11 +457,9 @@ button a {
 
 button {
   right: 3rem;
-  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
+  background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   border: solid 0.2rem black;
-  border-radius: 2rem;
   margin-top: 3rem;
-  transition: ease-in-out 4s;
   position: fixed; }
 
 button a {
@@ -516,20 +504,12 @@ button a {
   margin-right: auto;
   margin-bottom: 4rem; }
 
-hr {
-  min-width: 100%;
-  height: 0.5rem;
-  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
-  margin-bottom: 0rem; }
-
 button {
   right: 3rem;
-  background-image: linear-gradient(to bottom, #19f0dc, #00e8bf, #00df9f, #2ad57c, #46ca56, #2cbc61, #12ad69, #009e6d, #008489, #0066a3, #0042a3, #160578);
+  background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   border: solid 0.2rem black;
-  border-radius: 2rem;
   margin-top: 3rem;
-  transition: ease-in-out 4s;
-  position: fixed; }
+  transition: ease-in-out 4s; }
 
 button a {
   color: #fff; }
