@@ -43,26 +43,32 @@ header .navbar{
     transition: ease-in-out 4s;
 }
 
+// @media screen and (min-width: 610px){
+//     .navbar{
+//         display: contents;
+//     }
 
-@media screen and (max-width: 320px){
-    .navbar h1{
-        font-size: 2em;
-        flex-basis: 10%;
-    }
 
-    .menu__item .menu__link{
-        font-size: 1em;
-        line-height: 4rem;
+// // @media screen and (max-width: 768px){
+// //     .navbar h1{
+// //         font-size: 2em;
+// //         flex-basis: 10%;
+// //     }
 
-    .navbar .logo{
-        display: contents;
-        margin-left: auto;
+// //     .menu__item .menu__link{
+// //         font-size: 1em;
+// //         line-height: 4rem;
+
+// //     .navbar .logo{
+// //         display: contents;
+// //         margin-left: auto;
         
-    }
-}
+// //     }
+// // }
 
 
 
 
-}
+// }
 
+// }   

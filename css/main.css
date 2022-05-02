@@ -20,8 +20,9 @@ html {
 
 body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 10 fr auto;
   min-height: 100vh;
+  height: 100%;
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339); }
 
 ul {
@@ -31,6 +32,11 @@ a {
   text-decoration: none;
   color: #fff;
   display: flex; }
+
+@media screen and (max-width: 608px) {
+  body {
+    display: grid;
+    grid-template-rows: auto auto auto; } }
 
 /*PARTIALS */
 header .navbar {
@@ -76,38 +82,20 @@ header .navbar {
   border: 0.3rem solid black;
   transition: ease-in-out 4s; }
 
-@media screen and (max-width: 320px) {
-  .navbar h1 {
-    font-size: 2em;
-    flex-basis: 10%; }
-  .menu__item .menu__link {
-    font-size: 1em;
-    line-height: 4rem; }
-    .menu__item .menu__link .navbar .logo {
-      display: contents;
-      margin-left: auto; } }
-
 footer {
   padding: 0 auto;
   align-items: center;
   text-align: center;
   display: flex;
+  bottom: 0;
   justify-content: space-evenly;
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
-  width: 100vw;
+  width: 100%;
   min-height: 5%; }
 
 p {
   color: #fff;
   text-align: center; }
-
-@media screen and (max-width: 320px) {
-  footer {
-    width: 100%; } }
-
-@media screen and (max-width: 1024px) and (min-width: 320px) {
-  footer {
-    width: 100%; } }
 
 /*VIEWS */
 .section {
@@ -389,7 +377,7 @@ hr {
     margin-top: 8rem;
     margin: 0 auto; } }
 
-@media screen and (max-width: 480px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 320px) {
   #resumen {
     display: none; }
   #laboral {
@@ -467,7 +455,7 @@ button a {
   .aboutservicios {
     height: 155rem; } }
 
-@media screen and (max-width: 480px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 320px) {
   .menuservicios {
     font-size: 2em; }
   .aboutservicios {
@@ -523,6 +511,9 @@ button a {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem; }
+
+hr {
+  margin-bottom: 0rem; }
 
 button {
   right: 3rem;

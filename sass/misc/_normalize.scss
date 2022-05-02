@@ -24,8 +24,9 @@ html{
 
 body{
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto 10 fr auto;
     min-height: 100vh;
+    height: 100%;
     background-image: map-get($colors, primary);
 }
 
@@ -38,4 +39,13 @@ a{
     text-decoration: none;
     color: map-get($colors, secondary);
     display: flex;
+}
+
+
+@media screen and (max-width: 608px){
+    body{
+        display: grid;
+        grid-template-rows: auto auto auto;
+    }
+   
 }
