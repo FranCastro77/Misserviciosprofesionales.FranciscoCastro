@@ -121,5 +121,27 @@
     box-shadow: -0.3rem 0.3rem 0.3rem map-get($colors, secondary);
 }
 
-
 }
+
+
+@media screen and (max-width: 768px) and (min-width: 260px) {
+    .section{
+        font-size: 0.7em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .titulolinks{
+        max-width: 100%;
+    }
+
+    .titulonovedades{
+        max-width: 100%;
+    }
+
+    iframe {
+        max-width: 90%;
+    }
+
+
+} 

@@ -42,10 +42,21 @@ a{
 }
 
 
-@media screen and (max-width: 608px){
+@media screen and (max-width: 768px) and (min-width: 260px) {
     body{
-        display: grid;
-        grid-template-rows: auto auto auto;
+        display: flex;
+        flex-direction: column;
     }
+
+} 
+
+
+
+
+// @media screen and (max-width: 608px){
+//     body{
+//         display: grid;
+//         grid-template-rows: auto auto auto;
+//     }
    
-}
+

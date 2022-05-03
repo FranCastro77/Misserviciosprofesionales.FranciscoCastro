@@ -46,4 +46,10 @@ header .navbar{
         @include flex(row, space-between, center, 5rem, nowrap);
      padding-inline-start: 0;
     }
+
+    @media screen and (max-width: 768px) and (min-width: 260px) {
+        .navbar ul{
+            gap: 3rem;
+            }
     
+    } 

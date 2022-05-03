@@ -33,10 +33,10 @@ a {
   color: #fff;
   display: flex; }
 
-@media screen and (max-width: 608px) {
+@media screen and (max-width: 768px) and (min-width: 260px) {
   body {
-    display: grid;
-    grid-template-rows: auto auto auto; } }
+    display: flex;
+    flex-direction: column; } }
 
 /*PARTIALS */
 header .navbar {
@@ -88,6 +88,10 @@ header .navbar {
   flex-wrap: nowrap;
   padding-inline-start: 0; }
 
+@media screen and (max-width: 768px) and (min-width: 260px) {
+  .navbar ul {
+    gap: 3rem; } }
+
 footer {
   padding: 0 auto;
   align-items: center;
@@ -102,6 +106,9 @@ footer {
 p {
   color: #fff;
   text-align: center; }
+
+a {
+  justify-content: center; }
 
 /*VIEWS */
 .section {
@@ -197,6 +204,18 @@ p {
     box-shadow: 0.3rem 0.3rem 0.3rem #fff; }
   .section .cotizaciones .menu__banner2 {
     box-shadow: -0.3rem 0.3rem 0.3rem #fff; }
+
+@media screen and (max-width: 768px) and (min-width: 260px) {
+  .section {
+    font-size: 0.7em;
+    margin-left: 0;
+    margin-right: 0; }
+  .titulolinks {
+    max-width: 100%; }
+  .titulonovedades, .section .novedades, .section .titulolinks {
+    max-width: 100%; }
+  iframe {
+    max-width: 90%; } }
 
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
@@ -375,9 +394,13 @@ button a {
     margin-top: 8rem;
     margin: 0 auto; }
   .container .card .face.face2 .content a {
-    display: none; } }
+    display: none; }
+  button {
+    position: relative;
+    justify-content: center;
+    margin-left: 8rem; } }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 260px) {
   #resumen {
     display: none; }
   #laboral {
@@ -391,7 +414,10 @@ button a {
     margin-top: 8rem;
     margin: 0 auto; }
   .container .card .face.face2 .content a {
-    display: none; } }
+    display: none; }
+  button {
+    position: relative;
+    right: -18rem; } }
 
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
@@ -456,9 +482,13 @@ button a {
   .aboutservicios h3 {
     font-size: 1em; }
   .aboutservicios ul {
-    padding-inline-start: 0; } }
+    padding-inline-start: 0; }
+  button {
+    position: relative;
+    justify-content: center;
+    margin-left: 8rem; } }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 260px) {
   .aboutservicios ol {
     font-size: 0.5em; }
   .aboutservicios p {
@@ -466,7 +496,13 @@ button a {
   .aboutservicios h3 {
     font-size: 1em; }
   .aboutservicios ul {
-    padding-inline-start: 0; } }
+    padding-inline-start: 0;
+    margin-right: 2rem;
+    margin-left: 2rem; }
+  button {
+    position: relative;
+    justify-content: center;
+    margin-left: 10rem; } }
 
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
@@ -516,6 +552,14 @@ button a {
   margin-right: auto;
   margin-bottom: 4rem; }
 
+@media screen and (max-width: 768px) and (min-width: 260px) {
+  button {
+    margin-left: 12rem; }
+  .form {
+    max-width: 100%; }
+  textarea {
+    max-width: 90%; } }
+
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   border: solid 0.2rem black;
@@ -560,12 +604,25 @@ table {
     flex-direction: column;
     text-align: center;
     margin: auto;
-    padding-top: 2rem; } }
+    padding-top: 2rem; }
+  button {
+    position: relative;
+    justify-content: center;
+    margin-left: 8rem; } }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 260px) {
   .tabla {
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: auto;
-    padding-top: 2rem; } }
+    padding-top: 2rem;
+    font-size: 0.5em; }
+  table {
+    border-spacing: 0; }
+  button {
+    position: relative;
+    justify-content: center;
+    margin-left: 8rem; }
+  tr {
+    border-spacing: 0; } }

@@ -210,9 +210,15 @@ button a{
         display: none;
     }
 
+    button{
+        position: relative;
+        justify-content: center;
+        margin-left: 8rem;
+    }
+
 }   
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 260px) {
     #resumen{
         display: none;
     }
@@ -236,6 +242,12 @@ button a{
     .container .card .face.face2 .content a{
         display: none;
     }
+
+    button{
+        position: relative;
+        right: -18rem;
+    }
+
 }
 
 

@@ -77,9 +77,16 @@ button a{
     .aboutservicios ul{
         padding-inline-start: 0;
     }
+
+    button{
+        position: relative;
+        justify-content: center;
+        margin-left: 8rem;
+    }
+
 }
 
-@media screen and (max-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 260px) {
     .aboutservicios ol{
         font-size: 0.5em;
         }
@@ -94,7 +101,16 @@ button a{
 
     .aboutservicios ul{
         padding-inline-start: 0;
+        margin-right: 2rem;
+        margin-left: 2rem;
     }
+
+    button{
+        position: relative;
+        justify-content: center;
+        margin-left: 10rem;
+    }
+
 
     }
 
