@@ -31,6 +31,7 @@ header .navbar{
         border: 0.1rem solid map-get($colors, primary);
         flex-basis: 25%;
         font-size: 1.2em; 
+        text-align: center;
         text-decoration: none;
         list-style-type: none;
         transition: ease-in-out 2s; 
@@ -51,5 +52,16 @@ header .navbar{
         .navbar ul{
             gap: 3rem;
             }
+        
+        .navbar{
+            padding:0;
+        }
+
+        .logo{
+            display: flex;
+            max-width: 100%;
+        }
+
+      
     
     } 

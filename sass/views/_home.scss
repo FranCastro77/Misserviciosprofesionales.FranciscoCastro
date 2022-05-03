@@ -127,8 +127,8 @@
 @media screen and (max-width: 768px) and (min-width: 260px) {
     .section{
         font-size: 0.7em;
-        margin-left: 0;
-        margin-right: 0;
+        // margin-left: 0;
+        // margin-right: 0;
     }
 
     .titulolinks{
@@ -140,6 +140,11 @@
     }
 
     iframe {
+        max-width: 90%;
+    }
+
+    .section .novedades {
+        display: block;
         max-width: 90%;
     }
 

@@ -71,6 +71,7 @@ header .navbar {
   border: 0.1rem solid linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
   flex-basis: 25%;
   font-size: 1.2em;
+  text-align: center;
   text-decoration: none;
   list-style-type: none;
   transition: ease-in-out 2s; }
@@ -90,7 +91,12 @@ header .navbar {
 
 @media screen and (max-width: 768px) and (min-width: 260px) {
   .navbar ul {
-    gap: 3rem; } }
+    gap: 3rem; }
+  .navbar {
+    padding: 0; }
+  .logo {
+    display: flex;
+    max-width: 100%; } }
 
 footer {
   padding: 0 auto;
@@ -207,14 +213,15 @@ a {
 
 @media screen and (max-width: 768px) and (min-width: 260px) {
   .section {
-    font-size: 0.7em;
-    margin-left: 0;
-    margin-right: 0; }
+    font-size: 0.7em; }
   .titulolinks {
     max-width: 100%; }
   .titulonovedades, .section .novedades, .section .titulolinks {
     max-width: 100%; }
   iframe {
+    max-width: 90%; }
+  .section .novedades {
+    display: block;
     max-width: 90%; } }
 
 button {
@@ -400,6 +407,14 @@ button a {
     justify-content: center;
     margin-left: 8rem; } }
 
+@media screen and (max-width: 955px) and (min-width: 769px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 2rem;
+    margin-top: 8rem;
+    margin: 0 auto; } }
+
 @media screen and (max-width: 768px) and (min-width: 260px) {
   #resumen {
     display: none; }
@@ -417,7 +432,7 @@ button a {
     display: none; }
   button {
     position: relative;
-    right: -18rem; } }
+    right: -14rem; } }
 
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
@@ -474,20 +489,6 @@ button a {
   line-height: 3.5rem;
   margin-bottom: 5rem; }
 
-@media screen and (max-width: 320px) {
-  .aboutservicios ol {
-    font-size: 0.5em; }
-  .aboutservicios p {
-    font-size: 1em; }
-  .aboutservicios h3 {
-    font-size: 1em; }
-  .aboutservicios ul {
-    padding-inline-start: 0; }
-  button {
-    position: relative;
-    justify-content: center;
-    margin-left: 8rem; } }
-
 @media screen and (max-width: 768px) and (min-width: 260px) {
   .aboutservicios ol {
     font-size: 0.5em; }
@@ -501,8 +502,7 @@ button a {
     margin-left: 2rem; }
   button {
     position: relative;
-    justify-content: center;
-    margin-left: 10rem; } }
+    right: -10rem; } }
 
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
@@ -558,7 +558,15 @@ button a {
   .form {
     max-width: 100%; }
   textarea {
-    max-width: 90%; } }
+    max-width: 80%; }
+  .enviar {
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    text-align: center; }
+  .enviar input {
+    margin-bottom: 1rem;
+    margin-top: 1rem; } }
 
 button {
   background-image: linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);

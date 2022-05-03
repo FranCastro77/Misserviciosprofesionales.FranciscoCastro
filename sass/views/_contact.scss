@@ -67,7 +67,19 @@ button a{
     }
 
     textarea{
-        max-width: 90%;
+        max-width: 80%;
     }
-    
+
+    .enviar{
+        max-width: 50%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
     }
+
+    .enviar input{
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+}
+ 
