@@ -33,8 +33,10 @@ button a{
 }
 
 .labeldatos{
-    font-size: 2rem;
-    align-content:left;
+    font-size: 2em;
+    display:inline-flex;
+    max-width: fit-content;
+    padding-inline-end: 0.8rem;
 }
 
 .labelconsulta{
