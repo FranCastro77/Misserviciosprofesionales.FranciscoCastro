@@ -1,14 +1,15 @@
 button{
-    background-image: map-get($colors, primary);
+    background-color: white;
+    // background-image: map-get($colors, primary);
     border: solid 0.2rem black;
     margin-top: 3rem;
-    position: fixed;
+    position: relative;
 }
 
 button a{
-    color: map-get($colors, secondary);
+    // color: map-get($colors, secondary);
+    color: black;
 }
-
 
 .tabla{
     display: grid;
