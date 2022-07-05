@@ -1,5 +1,6 @@
-let usuarios = [] //Variable donde guardo los datos a medida que carga el usuario
-const usuariosGlobal = [] //Variable donde guardo los datos de todos los usuarios
 
+let usuarios = [] //Variable donde guardo los datos de cada usuario a medida que los ingresa
 
-let btnCargar = document.getElementById("enviadatos")
+const listaUsuarios = [] //Variable donde guardo los datos de todos los usuarios
+
+const btnCargar = document.getElementById("btnusuario")
