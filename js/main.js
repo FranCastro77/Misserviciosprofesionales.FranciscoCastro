@@ -22,9 +22,16 @@ btnCargar.addEventListener("click", ()=> {
         telefono = document.getElementById("inputel").value, //Variable donde guardo telefono del usuario
 
     )
+
+    listaUsuarios.push(usuario) 
+    
+    listaUsuarios.forEach(usuario => {
+        alert("El nombre completo es: " +usuario.nombre +" " + usuario.apellido + ", su correo electronico es " + usuario.email + " y su telefono es " + usuario.telefono + "\n");
+
+    })
     // localStorage.setItem("Usuarios", JSON.stringify(usuario))    
     
-    listaUsuarios.push(usuario)                
+    // listaUsuarios.push(usuario)                
     
     // console.log(listaUsuarios)
     // localStorage.setItem("ListaUsuarios", JSON.stringify(listaUsuarios))    
@@ -33,7 +40,7 @@ btnCargar.addEventListener("click", ()=> {
     
     
     
-    alert(listaUsuarios.nombre)
+    // alert(listaUsuarios.nombre)
     
 })
 
