@@ -106,8 +106,32 @@ button p{
     color: white;
 }
 
+.muestraclientes ul{
+    list-style-type: auto;
+    color: map-get($colors , secondary);
+    text-align: justify;
+    font-size: 1em;
+    padding: 1.5rem 1.5rem;
+    line-height: 3.5rem;
+    margin-bottom: 5rem;
+}
 
-
+.verlistado {
+    display: flex;
+    flex-direction: column;
+    border: solid 0.2rem map-get($colors, bordercolor);
+    border-radius: 2rem;
+    background-image: map-get($colors, cuadrohome);
+    padding: 0 auto;
+    margin-top: 8rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    min-width: 15%;
+    max-width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
 
 
 

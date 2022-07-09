@@ -1,0 +1,8 @@
+Aplicacion para carga de datos de usuario y sus clientes
+
+- Se quiere que los interesados, puedan ingresar sus datos principales para registrarse en una base datos
+
+- Aimismo, si lo desean, pueden ingresar los datos de sus clientes para poder tenerlos registrados en una base
+
+- La informacion solo se muestra si hay datos cargados y, como requisito esencial, que tengan un usuario registrado
+

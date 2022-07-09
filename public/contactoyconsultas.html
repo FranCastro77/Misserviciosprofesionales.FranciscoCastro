@@ -9,7 +9,7 @@
     <title>Francisco Castro - Consultor - Déjenos sus comentarios o consultas junto a sus datos de contacto para poder comunicarnos</title>
     <meta name="author" content="Francisco Castro" />
     <meta name="copyright" content="Propietario del copyright" />
-    <!-- <link rel="stylesheet" href="../css/main.css"> -->
+    <link rel="stylesheet" href="../css/main.css">
     
 </head>
 <body>
@@ -49,7 +49,7 @@
 
 <section class ="formulario">
 
-    <form class="form">
+    <form class="form" id="formulario-cliente">
         <div class="labeldatos">
             <p>
                 <label for="nombre_apellido">Nombre:</label>
@@ -82,39 +82,23 @@
 
         <div class = "cargadatos">
             <button id = "btnusuario"> 
-                <p> INGRESAR DATOS </p>
+                <p> INGRESA USUARIO </p>
             </button>
-
         </div>
-    </form> 
-</section>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    <div id = "otrotitulo">
-        
-    </div>
-    
+    </form>
 
 
-<section class ="formulario">
 
-    <form class = "form" >
-
-    
-
+    </form class="form" id="formulario-cliente">
         <div class="labeldatos">
             <p>
-                <label for="denominacion">Denominacion Social:</label>
+             <label for="denominacion">Denominacion Social:</label>
                 <input type="text" name="denominacion" id = "denominacion" max-size="50%"/>
             </p>
         </div>
-      
-        <div class="labeldatos">
+  
+         <div class="labeldatos">
             <p>
                 <label for="digitocuit">Ultimo dígito CUIT:</label>
                 <input type="text" name="digitocuit" id = "digitocuit" max-size="50%"/>
@@ -130,7 +114,7 @@
 
         <div class="labeldatos">
             <p>
-                <label for="IVA">Inscripción IVA:</label>
+             <label for="IVA">Inscripción IVA:</label>
                 <input type="text" name="IVA" id = "iva" max-size="50%"/>
             </p>
         </div>
@@ -144,15 +128,49 @@
 
 
         <div class = "cargadatos">
-            <button id = "nuevacargadatos"> 
-                <p> INGRESA DATOS CLIENTES </p>
+            <button id = "btnclientes"> 
+                <p> CARGA DATOS </p>
             </button>
-
         </div>
+
+
+        <div class = "cargadatos">
+            <button id = "btnverclientes"> 
+                <p> VER LISTADO </p>
+            </button>
+        </div>
+
+    <form 
+
+
+       
+        
+                
+
+
+
+
+
+
+    </form> 
+</section>
+
 
     </form>
 
+<div class = "muestraclientes">
+    <ul id="listadodeClientes" class = "muestraclientes">
+    </ul>
+</div>
+
+
+
+
+
 </section>
+
+
+
 
 
 <footer>
