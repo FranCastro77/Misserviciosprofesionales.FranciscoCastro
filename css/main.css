@@ -529,15 +529,6 @@ button a {
   max-width: fit-content;
   padding-inline-end: 0.8rem; }
 
-.labelconsulta {
-  font-size: 2rem;
-  align-items: left;
-  margin-top: 4rem; }
-
-.labelconsulta p {
-  font-size: 2em;
-  color: #0c1b30; }
-
 .cargadatos button {
   display: flex;
   flex-direction: column;
