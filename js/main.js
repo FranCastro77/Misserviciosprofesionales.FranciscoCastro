@@ -9,9 +9,12 @@ class Usuario {
     }
 }
 
+
+
 btnCargar.addEventListener("click", (e)=> {
 
     e.preventDefault();
+
 
     if ((document.getElementById("inputnombre").value !== "") && (document.getElementById("inputapellido").value !== "") && (document.getElementById("inputmail").value !== "") && (document.getElementById("inputel").value !== "")){
 
@@ -24,22 +27,68 @@ btnCargar.addEventListener("click", (e)=> {
 
     )
 
-      listaUsuarios.push(usuario)
 
-      localStorage.setItem("ListaUsuarios", JSON.stringify(listaUsuarios))
+        Swal.fire({
+          title: 'Confirmas que deseas registrar los datos ingresados?',
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'CONFIRMO',
+          denyButtonText: `DESCARTAR`,
+        }).then((result) => {
+          
+          if (result.isConfirmed) {
+            Swal.fire('Saved!', '', 'success')
+            listaUsuarios.push(usuario)
 
-      console.log(listaUsuarios)
+            // usuarios =  JSON.parse(localStorage.getItem("ListaUsuarios"));
+            // usuarios.push(usuario)
+            
+            // localStorage.setItem("ListaUsuarios", JSON.stringify(usuarios))
+            
+            // console.log (usuarios)
+
+            localStorage.setItem("ListaUsuarios", JSON.stringify(listaUsuarios))
+      
+            Swal.fire(
+              'LISTO! Has ingresado los siguientes datos', 
+              nombre.toUpperCase() + " " + apellido.toUpperCase() + ", " + email + ", " + telefono,
+              'success'
+            )
+
+
+            // nombreUsuario  [{nombre}] = listaUsuarios
+
+            // console.log (nombreUsuario)
+
+
+            document.getElementById("inputnombre").value = ""
+            document.getElementById("inputapellido").value = ""
+            document.getElementById("inputmail").value = ""
+            document.getElementById("inputel").value = ""
+        
+            document.getElementById("inputnombre").focus ()
+
+
+            console.log(usuarios)
+
+          
+
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+          }
+        })
+
 
     } else {
-      alert ("INGRESA PRIMERO DATOS DEL USUARIO")
-    }
+      
+      Swal.fire({
+        icon: 'error',
+        title: 'ERROR!',
+        text: 'RECUERDA INGRESAR DATOS DE UN USUARIO',
+      })
 
-    document.getElementById("inputnombre").value = ""
-    document.getElementById("inputapellido").value = ""
-    document.getElementById("inputmail").value = ""
-    document.getElementById("inputel").value = ""
+      }
 
-    document.getElementById("inputnombre").focus ()
     })
 
 
@@ -68,40 +117,56 @@ btncargarCliente.addEventListener("click", (e)=>{
 
   listadoClientes = document.getElementById("listadodeClientes");
 
+  usuarios =  JSON.parse(localStorage.getItem("ListaUsuarios"));
+
+  console.log (usuarios)
+
   if ((document.getElementById("inputnombre").value !== "") && (document.querySelector("#denominacion").value !== "") && (document.querySelector("#digitocuit").value !== "") && (document.querySelector("#mescierre").value !== "")&& (document.querySelector("#iva").value !== "")&& (document.querySelector("#ganancias").value !== "")){
 
-    const cliente = new Cliente (
+ 
+        const cliente = new Cliente (
 
-      usuarionombre = document.getElementById("inputnombre").value, //Toma el dato ingresado en la sección anterior
-      denominacion = document.querySelector("#denominacion").value, //Variable donde guardo denominacion social del cliente
-      digitocuit = document.querySelector("#digitocuit").value, //Variable donde guardo el digito verificador de la CUIT
-      mescierre = document.querySelector("#mescierre").value, //Variable donde guardo el numero de mes de cierre de Estados Contables
-      iva = document.querySelector("#iva").value, //Variable donde guardo si esta o no inscripto en IVA
-      ganancias = document.querySelector("#ganancias").value, //Variable donde guardo si esta o no inscripto en Ganancias
-
-)
-    clientesenLS.push(cliente);
-
-    localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+          usuarionombre = document.getElementById("inputnombre").value, //Toma el dato ingresado en la sección anterior
+          denominacion = document.querySelector("#denominacion").value, //Variable donde guardo denominacion social del cliente
+          digitocuit = document.querySelector("#digitocuit").value, //Variable donde guardo el digito verificador de la CUIT
+          mescierre = document.querySelector("#mescierre").value, //Variable donde guardo el numero de mes de cierre de Estados Contables
+          iva = document.querySelector("#iva").value, //Variable donde guardo si esta o no inscripto en IVA
+          ganancias = document.querySelector("#ganancias").value, //Variable donde guardo si esta o no inscripto en Ganancias
     
-
-    document.getElementById("inputnombre").value = ""
-    document.querySelector("#denominacion").value = ""
-    document.querySelector("#digitocuit").value = ""
-    document.querySelector("#mescierre").value = ""
-    document.querySelector("#iva").value = ""
-    document.querySelector("#ganancias").value = ""
-
-    document.getElementById("inputnombre").focus ()
+    )
+        
+        Swal.fire(
+          'INGRESASTE LOS SIGUIENTES DATOS:', 
+          "USUARIO: " + usuarionombre + "\n" + "DATOS INGRESADOS: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
+          'success'
+    )  
+      
+        clientesenLS.push(cliente);
     
-      
+        localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+        
+    
+        document.getElementById("inputnombre").value = ""
+        document.querySelector("#denominacion").value = ""
+        document.querySelector("#digitocuit").value = ""
+        document.querySelector("#mescierre").value = ""
+        document.querySelector("#iva").value = ""
+        document.querySelector("#ganancias").value = ""
+    
+        document.getElementById("inputnombre").focus ()
+        
+          
 
-    alert("USUARIO: " + usuarionombre + "\n" + "DATOS INGRESADOS: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias)
-      
 
 
     }else{
-      listadoClientes.innerHTML = "<h1>NO PUDIMOS REGISTRAR LA INFORMACION. POR FAVOR, REVISA LOS DATOS CARGADOS</h1>";
+
+      Swal.fire({
+        icon: 'warning',
+        title: 'NO SE PUDO CUMPLIR TU PETICION!',
+        text: 'POR FAVOR, ASEGURA QUE EL USUARIO Y TODOS LOS CAMPOS DEL CLIENTE ESTEN COMPLETOS ',
+      })
+
     }
   })
 
