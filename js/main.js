@@ -9,16 +9,18 @@ class Usuario {
     }
 }
 
+usuarios = JSON.parse(localStorage.getItem("usuarios")) ?? [];
 
 
 btnCargar.addEventListener("click", (e)=> {
 
     e.preventDefault();
-
+     
 
     if ((document.getElementById("inputnombre").value !== "") && (document.getElementById("inputapellido").value !== "") && (document.getElementById("inputmail").value !== "") && (document.getElementById("inputel").value !== "")){
 
       let usuario = new Usuario (
+
 
         nombre = document.getElementById("inputnombre").value, //Variable donde guardo nombre del usuario
         apellido = document.getElementById("inputapellido").value, //Variable donde guardo apellido del usuario
@@ -38,28 +40,15 @@ btnCargar.addEventListener("click", (e)=> {
           
           if (result.isConfirmed) {
             Swal.fire('Saved!', '', 'success')
-            listaUsuarios.push(usuario)
+            usuarios.push(usuario)
 
-            // usuarios =  JSON.parse(localStorage.getItem("ListaUsuarios"));
-            // usuarios.push(usuario)
-            
-            // localStorage.setItem("ListaUsuarios", JSON.stringify(usuarios))
-            
-            // console.log (usuarios)
-
-            localStorage.setItem("ListaUsuarios", JSON.stringify(listaUsuarios))
+            localStorage.setItem("usuarios", JSON.stringify(usuarios))
       
             Swal.fire(
               'LISTO! Has ingresado los siguientes datos', 
               nombre.toUpperCase() + " " + apellido.toUpperCase() + ", " + email + ", " + telefono,
               'success'
             )
-
-
-            // nombreUsuario  [{nombre}] = listaUsuarios
-
-            // console.log (nombreUsuario)
-
 
             document.getElementById("inputnombre").value = ""
             document.getElementById("inputapellido").value = ""
@@ -111,20 +100,17 @@ class Cliente {
 }
 
 
+clientesenLS = JSON.parse(localStorage.getItem("Clientes")) ?? [];
+
+
 btncargarCliente.addEventListener("click", (e)=>{
 
   e.preventDefault();
 
-  listadoClientes = document.getElementById("listadodeClientes");
 
-  usuarios =  JSON.parse(localStorage.getItem("ListaUsuarios"));
+  if ((document.getElementById("inputnombre").value !== "") ){
 
-  console.log (usuarios)
-
-  if ((document.getElementById("inputnombre").value !== "") && (document.querySelector("#denominacion").value !== "") && (document.querySelector("#digitocuit").value !== "") && (document.querySelector("#mescierre").value !== "")&& (document.querySelector("#iva").value !== "")&& (document.querySelector("#ganancias").value !== "")){
-
- 
-        const cliente = new Cliente (
+        let cliente = new Cliente (
 
           usuarionombre = document.getElementById("inputnombre").value, //Toma el dato ingresado en la sección anterior
           denominacion = document.querySelector("#denominacion").value, //Variable donde guardo denominacion social del cliente
@@ -135,29 +121,31 @@ btncargarCliente.addEventListener("click", (e)=>{
     
     )
         
-        Swal.fire(
-          'INGRESASTE LOS SIGUIENTES DATOS:', 
-          "USUARIO: " + usuarionombre + "\n" + "DATOS INGRESADOS: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
-          'success'
-    )  
-      
-        clientesenLS.push(cliente);
-    
+
+     
+        clientesenLS.push(cliente)
+
         localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
         
-    
+
         document.getElementById("inputnombre").value = ""
         document.querySelector("#denominacion").value = ""
         document.querySelector("#digitocuit").value = ""
         document.querySelector("#mescierre").value = ""
         document.querySelector("#iva").value = ""
         document.querySelector("#ganancias").value = ""
-    
+
         document.getElementById("inputnombre").focus ()
-        
+
+            
+
           
-
-
+        Swal.fire(
+          'INGRESASTE LOS SIGUIENTES DATOS:', 
+          "USUARIO: " + usuarionombre + "\n" + "DATOS INGRESADOS: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
+          'success'
+    )  
+      
 
     }else{
 
@@ -179,25 +167,30 @@ btnverClientes.addEventListener("click", (e) =>{
 
   listadoClientes = document.getElementById("listadodeClientes");
 
-  let clientes = JSON.parse(localStorage.getItem("Clientes"));
 
   listadoClientes.innerHTML = "";
     
-  clientes.forEach(cliente => {
+
+    clientesenLS.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
       let li = document.createElement("li");
       li.innerHTML = `
       
-      <hr> ${cliente.denominacion.toUpperCase()} - IDCUIT N°: ${cliente.digitocuit} - MES CIERRE EECC: ${cliente.mescierre} - INSC. IVA: ${cliente.iva} - INSC. GCIAS.:${cliente.ganancias}`;
+      <hr> 
+      ${denominacion.toUpperCase()}
+      ${"- IDCUIT N°: " + digitocuit}  
+      ${"- MES CIERRE EECC: " + mescierre} 
+      ${iva && "- INSC. IVA: "+ iva} 
+      ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
     
       listadoClientes.appendChild(li);
     });
   
   
-  console.log(clientes);
+  console.log(clientesenLS);
   })
 
 
- 
+
 
 
 
