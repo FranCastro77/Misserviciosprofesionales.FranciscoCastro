@@ -130,7 +130,7 @@ a {
   margin-right: 5rem;
   margin-left: 5rem;
   margin-bottom: 5rem; }
-  .section .titulonovedades, .section .novedades, .section .titulolinks {
+  .section .titulonovedades, .section .novedades, .section .titulolinks, .section .cotizaciones {
     font-size: 1.2em;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -141,11 +141,11 @@ a {
     justify-items: center;
     margin-top: 4rem;
     margin-bottom: 4rem; }
-  .section .titulonovedades h3, .section .novedades h3, .section .titulolinks h3 {
+  .section .titulonovedades h3, .section .novedades h3, .section .titulolinks h3, .section .cotizaciones h3 {
     color: #fff;
     font-size: 2em;
     text-align: center; }
-  .section .titulonovedades h4, .section .novedades h4, .section .titulolinks h4 {
+  .section .titulonovedades h4, .section .novedades h4, .section .titulolinks h4, .section .cotizaciones h4 {
     color: #fff;
     font-size: 1.5em;
     text-decoration: underline;
@@ -205,7 +205,12 @@ a {
     font-size: 2em;
     margin-bottom: 3rem;
     margin-top: 4rem;
-    gap: 5rem; }
+    gap: 5rem;
+    color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
   .section .cotizaciones .menu__banner1 {
     box-shadow: 0.3rem 0.3rem 0.3rem #fff; }
   .section .cotizaciones .menu__banner2 {
@@ -216,7 +221,7 @@ a {
     font-size: 0.7em; }
   .titulolinks {
     max-width: 100%; }
-  .titulonovedades, .section .novedades, .section .titulolinks {
+  .titulonovedades, .section .novedades, .section .titulolinks, .section .cotizaciones {
     max-width: 100%; }
   iframe {
     max-width: 90%; }

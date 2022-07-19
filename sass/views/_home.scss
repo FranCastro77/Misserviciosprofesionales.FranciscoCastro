@@ -105,12 +105,18 @@
 
 
 .cotizaciones {
+    @extend.titulonovedades;
     display: flex;
     justify-content: space-evenly;
     font-size: 2em;
     margin-bottom: 3rem;
     margin-top: 4rem;
     gap: 5rem;
+    color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .cotizaciones .menu__banner1{

@@ -6,3 +6,5 @@ Aplicacion para carga de datos de usuario y sus clientes
 
 - La informacion solo se muestra si hay datos cargados y, como requisito esencial, que tengan un usuario registrado
 
+- En el HTML index principal deseo conectar con una API que brinda datos de cotizacion del dolar
+
