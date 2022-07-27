@@ -10,8 +10,8 @@ const nombreUsuario = []
 
 //Seccion Clientes
 
+let clientesenLS; //Variable donde guardo los datos de los clientes a medida que los ingresa cada usuario
+
 const btncargarCliente = document.querySelector("#btnclientes")
 
 const btnverClientes = document.querySelector("#btnverclientes")
-
-let clientesenLS;

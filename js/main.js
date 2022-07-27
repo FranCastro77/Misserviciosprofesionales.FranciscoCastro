@@ -1,9 +1,10 @@
-  // Sección carga de Usuario
+// Sección carga de Usuario
 
 class Usuario {
-    constructor (nombre, apellido, email, telefono){
+    constructor (nombre, apellido, documento, email, telefono){
         this.nombre = nombre
         this.apellido = apellido
+        this.documento = documento
         this.email = email
         this.telefono = telefono
     }
@@ -12,18 +13,20 @@ class Usuario {
 usuarios = JSON.parse(localStorage.getItem("usuarios")) ?? [];
 
 
+
 btnCargar.addEventListener("click", (e)=> {
 
     e.preventDefault();
      
 
-    if ((document.getElementById("inputnombre").value !== "") && (document.getElementById("inputapellido").value !== "") && (document.getElementById("inputmail").value !== "") && (document.getElementById("inputel").value !== "")){
+    if ((document.getElementById("inputnombre").value !== "") && (document.getElementById("inputapellido").value !== "") && (document.getElementById("inputdni").value !== "") && (document.getElementById("inputmail").value !== "") && (document.getElementById("inputel").value !== "")){
 
       let usuario = new Usuario (
 
 
         nombre = document.getElementById("inputnombre").value, //Variable donde guardo nombre del usuario
         apellido = document.getElementById("inputapellido").value, //Variable donde guardo apellido del usuario
+        documento = document.getElementById("inputdni").value, //Variable donde guardo documento personal del usuario
         email = document.getElementById("inputmail").value, //Variable donde guardo email del usuario
         telefono = document.getElementById("inputel").value, //Variable donde guardo telefono del usuario
 
@@ -41,7 +44,7 @@ btnCargar.addEventListener("click", (e)=> {
           if (result.isConfirmed) {
             Swal.fire('Saved!', '', 'success')
             usuarios.push(usuario)
-
+            
             localStorage.setItem("usuarios", JSON.stringify(usuarios))
       
             Swal.fire(
@@ -52,6 +55,7 @@ btnCargar.addEventListener("click", (e)=> {
 
             document.getElementById("inputnombre").value = ""
             document.getElementById("inputapellido").value = ""
+            document.getElementById("inputdni").value = ""
             document.getElementById("inputmail").value = ""
             document.getElementById("inputel").value = ""
         
@@ -89,8 +93,8 @@ btnCargar.addEventListener("click", (e)=> {
 
 
 class Cliente {
-    constructor (usuarionombre, denominacion, digitocuit, mescierre, iva, ganancias){
-        this.usuario = usuarionombre
+    constructor (documentousuario, denominacion, digitocuit, mescierre, iva, ganancias){
+        this.documento = documentousuario
         this.denominacion = denominacion
         this.digitocuit = digitocuit
         this.mescierre = mescierre
@@ -103,16 +107,21 @@ class Cliente {
 clientesenLS = JSON.parse(localStorage.getItem("Clientes")) ?? [];
 
 
+
+
+
 btncargarCliente.addEventListener("click", (e)=>{
 
   e.preventDefault();
 
 
-  if ((document.getElementById("inputnombre").value !== "") ){
+
+
+  if ((document.getElementById("docupersonal").value !== "") &&(document.querySelector("#denominacion").value !== "") && (document.querySelector("#digitocuit").value !== "") && (document.querySelector("#mescierre").value !== "")){
 
         let cliente = new Cliente (
-
-          usuarionombre = document.getElementById("inputnombre").value, //Toma el dato ingresado en la sección anterior
+ 
+          documentousuario = document.getElementById("docupersonal").value,
           denominacion = document.querySelector("#denominacion").value, //Variable donde guardo denominacion social del cliente
           digitocuit = document.querySelector("#digitocuit").value, //Variable donde guardo el digito verificador de la CUIT
           mescierre = document.querySelector("#mescierre").value, //Variable donde guardo el numero de mes de cierre de Estados Contables
@@ -120,31 +129,81 @@ btncargarCliente.addEventListener("click", (e)=>{
           ganancias = document.querySelector("#ganancias").value, //Variable donde guardo si esta o no inscripto en Ganancias
     
     )
+        let validadocumento = usuarios.find ((el) => el.documento === document.getElementById("docupersonal").value);  
+          
+        
+        if(validadocumento !== undefined){
+          console.log(validadocumento.documento)
+
+          clientesenLS.push(cliente)
+
+          localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+            
+          console.log(clientesenLS) 
+          
+          
+          // document.getElementById("inputnombre").value = ""
+          document.querySelector("#denominacion").value = ""
+          document.querySelector("#digitocuit").value = ""
+          document.querySelector("#mescierre").value = ""
+          document.querySelector("#iva").value = ""
+          document.querySelector("#ganancias").value = ""
+
+          Swal.fire(
+            'INGRESASTE LOS SIGUIENTES DATOS:', 
+            "DENOMINACION: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
+            'success'
+          )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }else{
+          Swal.fire({
+            icon: 'warning',
+            title: 'NO SE PUDO CUMPLIR TU PETICION!',
+            text: 'PARA PODER INGRESAR CLIENTES A LA BASE, PRIMERO DEBES TENER TUS DATOS REGISTRADOS ',
+          })
+          console.log("OBJETO NO ENCONTRADO")
+        }
+        
         
 
-     
-        clientesenLS.push(cliente)
 
-        localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+    //     clientesenLS.push(cliente)
+
+    //     localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+          
+    //     console.log(clientesenLS) 
         
+        
+    //     // document.getElementById("inputnombre").value = ""
+    //     document.querySelector("#denominacion").value = ""
+    //     document.querySelector("#digitocuit").value = ""
+    //     document.querySelector("#mescierre").value = ""
+    //     document.querySelector("#iva").value = ""
+    //     document.querySelector("#ganancias").value = ""
 
-        document.getElementById("inputnombre").value = ""
-        document.querySelector("#denominacion").value = ""
-        document.querySelector("#digitocuit").value = ""
-        document.querySelector("#mescierre").value = ""
-        document.querySelector("#iva").value = ""
-        document.querySelector("#ganancias").value = ""
-
-        document.getElementById("inputnombre").focus ()
+    //     // document.getElementById("inputnombre").focus ()
 
             
 
           
-        Swal.fire(
-          'INGRESASTE LOS SIGUIENTES DATOS:', 
-          "USUARIO: " + usuarionombre + "\n" + "DATOS INGRESADOS: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
-          'success'
-    )  
+    //     Swal.fire(
+    //       'INGRESASTE LOS SIGUIENTES DATOS:', 
+    //       "DENOMINACION: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
+    //       'success'
+    // )  
       
 
     }else{
@@ -152,13 +211,13 @@ btncargarCliente.addEventListener("click", (e)=>{
       Swal.fire({
         icon: 'warning',
         title: 'NO SE PUDO CUMPLIR TU PETICION!',
-        text: 'POR FAVOR, ASEGURA QUE EL USUARIO Y TODOS LOS CAMPOS DEL CLIENTE ESTEN COMPLETOS ',
+        text: 'PARA PODER INGRESAR DATOS DE TUS CLIENTES, PRIMERO DEBES INGRESAR TU DOCUMENTO ',
       })
 
     }
   })
 
-  
+ 
 
 
 btnverClientes.addEventListener("click", (e) =>{
@@ -170,8 +229,11 @@ btnverClientes.addEventListener("click", (e) =>{
 
   listadoClientes.innerHTML = "";
     
+    let muestraclientes = clientesenLS.filter((el) => el.documento === document.getElementById("docupersonal").value)
+    console.log(muestraclientes)
 
-    clientesenLS.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
+
+    muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
       let li = document.createElement("li");
       li.innerHTML = `
       
@@ -181,6 +243,18 @@ btnverClientes.addEventListener("click", (e) =>{
       ${"- MES CIERRE EECC: " + mescierre} 
       ${iva && "- INSC. IVA: "+ iva} 
       ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
+
+
+    // clientesenLS.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
+    //   let li = document.createElement("li");
+    //   li.innerHTML = `
+      
+    //   <hr> 
+    //   ${denominacion.toUpperCase()}
+    //   ${"- IDCUIT N°: " + digitocuit}  
+    //   ${"- MES CIERRE EECC: " + mescierre} 
+    //   ${iva && "- INSC. IVA: "+ iva} 
+    //   ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
     
       listadoClientes.appendChild(li);
     });
