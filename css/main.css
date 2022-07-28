@@ -617,6 +617,12 @@ button p {
   margin-right: auto;
   align-items: center; }
 
+#listadodeClientes h1 {
+  text-align: center; }
+
+#listadodeClientes h2 {
+  text-align: center; }
+
 @media screen and (max-width: 768px) and (min-width: 260px) {
   button {
     margin-left: 12rem; }

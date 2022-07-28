@@ -1,14 +1,14 @@
 // Sección carga de Usuario
 
-class Usuario {
-    constructor (nombre, apellido, documento, email, telefono){
-        this.nombre = nombre
-        this.apellido = apellido
-        this.documento = documento
-        this.email = email
-        this.telefono = telefono
-    }
-}
+// class Usuario {
+//     constructor (nombre, apellido, documento, email, telefono){
+//         this.nombre = nombre
+//         this.apellido = apellido
+//         this.documento = documento
+//         this.email = email
+//         this.telefono = telefono
+//     }
+// }
 
 usuarios = JSON.parse(localStorage.getItem("usuarios")) ?? [];
 
@@ -34,7 +34,8 @@ btnCargar.addEventListener("click", (e)=> {
 
 
         Swal.fire({
-          title: 'Confirmas que deseas registrar los datos ingresados?',
+          title: 'Confirmas?',
+          text: 'Los datos que estas a punto de ingresar son: ' + nombre.toUpperCase() + " " + apellido.toUpperCase() + ", " + documento + "," + email + ", " + telefono,
           showDenyButton: true,
           showCancelButton: true,
           confirmButtonText: 'CONFIRMO',
@@ -43,15 +44,19 @@ btnCargar.addEventListener("click", (e)=> {
           
           if (result.isConfirmed) {
             Swal.fire('Saved!', '', 'success')
+
+            let validausuario = usuarios.find ((el) => el.documento === document.getElementById("inputdni").value);  
+
+            if(validausuario === undefined){
+
             usuarios.push(usuario)
             
             localStorage.setItem("usuarios", JSON.stringify(usuarios))
       
-            Swal.fire(
-              'LISTO! Has ingresado los siguientes datos', 
-              nombre.toUpperCase() + " " + apellido.toUpperCase() + ", " + email + ", " + telefono,
-              'success'
-            )
+            Swal.fire({
+              text: 'LISTO! Tus datos han sido registrados correctamente', 
+              icon: 'success',
+            })
 
             document.getElementById("inputnombre").value = ""
             document.getElementById("inputapellido").value = ""
@@ -64,7 +69,16 @@ btnCargar.addEventListener("click", (e)=> {
 
             console.log(usuarios)
 
-          
+
+            }else{
+
+              Swal.fire({
+                icon: 'error',
+                title: 'ERROR!',
+                text: 'EL DOCUMENTO QUE DESEAS INGRESAR YA SE ENCUENTRA REGISTRADO',
+              })
+            }
+
 
           } else if (result.isDenied) {
             Swal.fire('Changes are not saved', '', 'info')
@@ -92,21 +106,21 @@ btnCargar.addEventListener("click", (e)=> {
 //   Sección carga de datos clientes y listado
 
 
-class Cliente {
-    constructor (documentousuario, denominacion, digitocuit, mescierre, iva, ganancias){
-        this.documento = documentousuario
-        this.denominacion = denominacion
-        this.digitocuit = digitocuit
-        this.mescierre = mescierre
-        this.iva = iva
-        this.ganancias = ganancias
-    }
-}
+// class Cliente {
+//     constructor (documentousuario, denominacion, digitocuit, mescierre, iva, ganancias){
+//         this.documento = documentousuario
+//         this.denominacion = denominacion
+//         this.digitocuit = digitocuit
+//         this.mescierre = mescierre
+//         this.iva = iva
+//         this.ganancias = ganancias
+//     }
+// }
 
 
 clientesenLS = JSON.parse(localStorage.getItem("Clientes")) ?? [];
 
-
+listadoClientes = document.getElementById("listadodeClientes");
 
 
 
@@ -115,96 +129,69 @@ btncargarCliente.addEventListener("click", (e)=>{
   e.preventDefault();
 
 
+  listadoClientes.innerHTML = "";
 
+  
+  if ((document.getElementById("docupersonal").value !== "")){
+  
+    if ((document.querySelector("#denominacion").value !== "") && (document.querySelector("#digitocuit").value !== "") && (document.querySelector("#mescierre").value !== "")){
 
-  if ((document.getElementById("docupersonal").value !== "") &&(document.querySelector("#denominacion").value !== "") && (document.querySelector("#digitocuit").value !== "") && (document.querySelector("#mescierre").value !== "")){
+      let cliente = new Cliente (
 
-        let cliente = new Cliente (
- 
-          documentousuario = document.getElementById("docupersonal").value,
-          denominacion = document.querySelector("#denominacion").value, //Variable donde guardo denominacion social del cliente
-          digitocuit = document.querySelector("#digitocuit").value, //Variable donde guardo el digito verificador de la CUIT
-          mescierre = document.querySelector("#mescierre").value, //Variable donde guardo el numero de mes de cierre de Estados Contables
-          iva = document.querySelector("#iva").value, //Variable donde guardo si esta o no inscripto en IVA
-          ganancias = document.querySelector("#ganancias").value, //Variable donde guardo si esta o no inscripto en Ganancias
-    
-    )
-        let validadocumento = usuarios.find ((el) => el.documento === document.getElementById("docupersonal").value);  
-          
+        documentousuario = document.getElementById("docupersonal").value,
+        denominacion = document.querySelector("#denominacion").value, //Variable donde guardo denominacion social del cliente
+        digitocuit = document.querySelector("#digitocuit").value, //Variable donde guardo el digito verificador de la CUIT
+        mescierre = document.querySelector("#mescierre").value, //Variable donde guardo el numero de mes de cierre de Estados Contables
+        iva = document.querySelector("#iva").value, //Variable donde guardo si esta o no inscripto en IVA
+        ganancias = document.querySelector("#ganancias").value, //Variable donde guardo si esta o no inscripto en Ganancias
+  
+  )
+      let validadocumento = usuarios.find ((el) => el.documento === document.getElementById("docupersonal").value);  
         
-        if(validadocumento !== undefined){
-          console.log(validadocumento.documento)
-
-          clientesenLS.push(cliente)
-
-          localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
-            
-          console.log(clientesenLS) 
-          
-          
-          // document.getElementById("inputnombre").value = ""
-          document.querySelector("#denominacion").value = ""
-          document.querySelector("#digitocuit").value = ""
-          document.querySelector("#mescierre").value = ""
-          document.querySelector("#iva").value = ""
-          document.querySelector("#ganancias").value = ""
-
-          Swal.fire(
-            'INGRESASTE LOS SIGUIENTES DATOS:', 
-            "DENOMINACION: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
-            'success'
-          )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }else{
-          Swal.fire({
-            icon: 'warning',
-            title: 'NO SE PUDO CUMPLIR TU PETICION!',
-            text: 'PARA PODER INGRESAR CLIENTES A LA BASE, PRIMERO DEBES TENER TUS DATOS REGISTRADOS ',
-          })
-          console.log("OBJETO NO ENCONTRADO")
-        }
-        
-        
-
-
-    //     clientesenLS.push(cliente)
-
-    //     localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
-          
-    //     console.log(clientesenLS) 
-        
-        
-    //     // document.getElementById("inputnombre").value = ""
-    //     document.querySelector("#denominacion").value = ""
-    //     document.querySelector("#digitocuit").value = ""
-    //     document.querySelector("#mescierre").value = ""
-    //     document.querySelector("#iva").value = ""
-    //     document.querySelector("#ganancias").value = ""
-
-    //     // document.getElementById("inputnombre").focus ()
-
-            
-
-          
-    //     Swal.fire(
-    //       'INGRESASTE LOS SIGUIENTES DATOS:', 
-    //       "DENOMINACION: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
-    //       'success'
-    // )  
       
+      if(validadocumento !== undefined){
+        console.log(validadocumento.documento)
+
+        clientesenLS.push(cliente)
+
+        localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+          
+        console.log(clientesenLS) 
+        
+        document.querySelector("#denominacion").value = ""
+        document.querySelector("#digitocuit").value = ""
+        document.querySelector("#mescierre").value = ""
+        document.querySelector("#iva").value = ""
+        document.querySelector("#ganancias").value = ""
+
+        Swal.fire(
+          'INGRESASTE LOS SIGUIENTES DATOS:', 
+          "DENOMINACION: " + cliente.denominacion.toUpperCase() +"-"+ "Digito CUIT: " + cliente.digitocuit + "-" + "Mes Cierre: " + cliente.mescierre + "-" + "Insc. IVA: " + cliente.iva +"-" + "Insc. Gcias.: " +cliente.ganancias,
+          'success'
+        )
+
+
+      }else{
+        Swal.fire({
+          icon: 'warning',
+          title: 'NO SE PUDO CUMPLIR TU PETICION!',
+          text: 'PARA PODER INGRESAR CLIENTES A LA BASE, PRIMERO DEBES TENER TUS DATOS REGISTRADOS ',
+        })
+        console.log("OBJETO NO ENCONTRADO")
+      }
+
+
+  
+  }else{
+
+    Swal.fire({
+      icon: 'warning',
+      title: 'ERROR!',
+      text: 'NO HAS INGRESADO DATOS DE CLIENTES PARA CARGAR. ',
+    })
+
+  }
+
 
     }else{
 
@@ -224,15 +211,19 @@ btnverClientes.addEventListener("click", (e) =>{
 
   e.preventDefault();
 
-  listadoClientes = document.getElementById("listadodeClientes");
-
 
   listadoClientes.innerHTML = "";
     
-    let muestraclientes = clientesenLS.filter((el) => el.documento === document.getElementById("docupersonal").value)
-    console.log(muestraclientes)
+  let muestraclientes = clientesenLS.filter((el) => el.documento === document.getElementById("docupersonal").value)
 
 
+  if(muestraclientes.length === 0){
+    console.log(muestraclientes);
+    listadoClientes.innerHTML = "<h1> Aun no tienes clientes guardados. </h1><hr><h2> Recuerda que para poder hacerlo, primero debes registrar tus datos.</h2>"
+
+
+  }else{
+   
     muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
       let li = document.createElement("li");
       li.innerHTML = `
@@ -245,23 +236,48 @@ btnverClientes.addEventListener("click", (e) =>{
       ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
 
 
-    // clientesenLS.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
-    //   let li = document.createElement("li");
-    //   li.innerHTML = `
+    let botonBorrar = document.createElement("button");
+    botonBorrar.innerText = "Borrar";
       
-    //   <hr> 
-    //   ${denominacion.toUpperCase()}
-    //   ${"- IDCUIT N°: " + digitocuit}  
-    //   ${"- MES CIERRE EECC: " + mescierre} 
-    //   ${iva && "- INSC. IVA: "+ iva} 
-    //   ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
-    
-      listadoClientes.appendChild(li);
+    botonBorrar.addEventListener("click", () => {
+        eliminarcliente(digitocuit);
+
+    })
+
+    li.appendChild(botonBorrar);   
+
+    listadoClientes.appendChild(li);
     });
-  
-  
-  console.log(clientesenLS);
+
+  }
+
   })
+
+  function eliminarcliente (digitocuit) {
+
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: "No podras recuperar el dato una vez borrado!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'OK Borrar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clientesenLS = clientesenLS.filter((el) => el.digitocuit !== digitocuit);
+        localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+        
+        Swal.fire(
+          'BORRADO!',
+          'El registro ha sido eliminado.',
+          'success'
+        )
+      }
+    })
+
+  }
+
 
 
 
