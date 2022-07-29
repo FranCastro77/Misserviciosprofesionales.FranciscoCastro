@@ -93,5 +93,3 @@ const vercotizaciones = async () => {
 
 
 vercotizaciones ();
-
-// ${"COTIZACIONES AL DIA: " + output}

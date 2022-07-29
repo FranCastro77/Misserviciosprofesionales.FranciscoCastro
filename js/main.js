@@ -1,15 +1,5 @@
 // Sección carga de Usuario
 
-// class Usuario {
-//     constructor (nombre, apellido, documento, email, telefono){
-//         this.nombre = nombre
-//         this.apellido = apellido
-//         this.documento = documento
-//         this.email = email
-//         this.telefono = telefono
-//     }
-// }
-
 usuarios = JSON.parse(localStorage.getItem("usuarios")) ?? [];
 
 
@@ -104,18 +94,6 @@ btnCargar.addEventListener("click", (e)=> {
 // --------------------------------------------------------------------------
 
 //   Sección carga de datos clientes y listado
-
-
-// class Cliente {
-//     constructor (documentousuario, denominacion, digitocuit, mescierre, iva, ganancias){
-//         this.documento = documentousuario
-//         this.denominacion = denominacion
-//         this.digitocuit = digitocuit
-//         this.mescierre = mescierre
-//         this.iva = iva
-//         this.ganancias = ganancias
-//     }
-// }
 
 
 clientesenLS = JSON.parse(localStorage.getItem("Clientes")) ?? [];
@@ -217,42 +195,99 @@ btnverClientes.addEventListener("click", (e) =>{
   let muestraclientes = clientesenLS.filter((el) => el.documento === document.getElementById("docupersonal").value)
 
 
-  if(muestraclientes.length === 0){
-    console.log(muestraclientes);
-    listadoClientes.innerHTML = "<h1> Aun no tienes clientes guardados. </h1><hr><h2> Recuerda que para poder hacerlo, primero debes registrar tus datos.</h2>"
+  if ((document.getElementById("docupersonal").value !== "")){
+
+    if(muestraclientes.length === 0){
+      console.log(muestraclientes);
+      listadoClientes.innerHTML = "<h1> Aun no tienes clientes guardados. </h1><hr><h2> Recuerda que para poder hacerlo, primero debes registrar tus datos.</h2>"
+
+
+    }else{
+    
+      muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
+        let li = document.createElement("li");
+        li.innerHTML = `
+        
+        <hr> 
+        ${denominacion.toUpperCase()}
+        ${"- IDCUIT N°: " + digitocuit}  
+        ${"- MES CIERRE EECC: " + mescierre} 
+        ${iva && "- INSC. IVA: "+ iva} 
+        ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
+
+
+      let botonBorrar = document.createElement("button");
+      botonBorrar.innerText = "Borrar";
+        
+      botonBorrar.addEventListener("click", () => {
+          eliminarcliente(digitocuit);
+
+          
+      })
+
+      li.appendChild(botonBorrar);   
+
+      listadoClientes.appendChild(li);
+      });
+
+    }
 
 
   }else{
-   
-    muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
-      let li = document.createElement("li");
-      li.innerHTML = `
-      
-      <hr> 
-      ${denominacion.toUpperCase()}
-      ${"- IDCUIT N°: " + digitocuit}  
-      ${"- MES CIERRE EECC: " + mescierre} 
-      ${iva && "- INSC. IVA: "+ iva} 
-      ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
-
-
-    let botonBorrar = document.createElement("button");
-    botonBorrar.innerText = "Borrar";
-      
-    botonBorrar.addEventListener("click", () => {
-        eliminarcliente(digitocuit);
-
-    })
-
-    li.appendChild(botonBorrar);   
-
-    listadoClientes.appendChild(li);
-    });
-
+    listadoClientes.innerHTML = "<h1> DEBES INGRESAR UN DOCUMENTO PARA PODER LISTAR TUS CLIENTES. </h1>"
   }
 
-  })
 
+
+
+
+
+
+
+
+
+
+
+      // if(muestraclientes.length === 0){
+      //   console.log(muestraclientes);
+      //   listadoClientes.innerHTML = "<h1> Aun no tienes clientes guardados. </h1><hr><h2> Recuerda que para poder hacerlo, primero debes registrar tus datos.</h2>"
+
+
+      // }else{
+      
+      //   muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
+      //     let li = document.createElement("li");
+      //     li.innerHTML = `
+          
+      //     <hr> 
+      //     ${denominacion.toUpperCase()}
+      //     ${"- IDCUIT N°: " + digitocuit}  
+      //     ${"- MES CIERRE EECC: " + mescierre} 
+      //     ${iva && "- INSC. IVA: "+ iva} 
+      //     ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
+
+
+      //   let botonBorrar = document.createElement("button");
+      //   botonBorrar.innerText = "Borrar";
+          
+      //   botonBorrar.addEventListener("click", () => {
+      //       eliminarcliente(digitocuit);
+
+            
+      //   })
+
+      //   li.appendChild(botonBorrar);   
+
+      //   listadoClientes.appendChild(li);
+      //   });
+
+      // }
+
+      })
+
+      
+
+  
   function eliminarcliente (digitocuit) {
 
     Swal.fire({
@@ -267,7 +302,72 @@ btnverClientes.addEventListener("click", (e) =>{
       if (result.isConfirmed) {
         clientesenLS = clientesenLS.filter((el) => el.digitocuit !== digitocuit);
         localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
+
+        listadoClientes.innerHTML = "";
+    
+        let muestraclientes = clientesenLS.filter((el) => el.documento === document.getElementById("docupersonal").value)
+
+
+        if(muestraclientes.length === 0){
+          console.log(muestraclientes);
+          listadoClientes.innerHTML = "<h1> Aun no tienes clientes guardados. </h1><hr><h2> Recuerda que para poder hacerlo, primero debes registrar tus datos.</h2>"
+
+
+        }else{
         
+          muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
+            let li = document.createElement("li");
+            li.innerHTML = `
+            
+            <hr> 
+            ${denominacion.toUpperCase()}
+            ${"- IDCUIT N°: " + digitocuit}  
+            ${"- MES CIERRE EECC: " + mescierre} 
+            ${iva && "- INSC. IVA: "+ iva} 
+            ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
+
+
+          let botonBorrar = document.createElement("button");
+          botonBorrar.innerText = "Borrar";
+            
+          botonBorrar.addEventListener("click", () => {
+              eliminarcliente(digitocuit);
+
+              
+          })
+
+          li.appendChild(botonBorrar);   
+
+          listadoClientes.appendChild(li);
+          });
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         Swal.fire(
           'BORRADO!',
           'El registro ha sido eliminado.',

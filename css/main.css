@@ -549,7 +549,8 @@ button a {
   min-width: 70%;
   max-width: 50%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  position: inherit; }
 
 .cargadatos {
   display: inline-flex;
@@ -564,7 +565,8 @@ button a {
   min-width: 70%;
   max-width: 50%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 5rem; }
 
 button p {
   display: inline-flex;
@@ -599,7 +601,12 @@ button p {
   font-size: 1em;
   padding: 1.5rem 1.5rem;
   line-height: 3.5rem;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  font-size: 1.5em;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  border: solid 0.2rem linear-gradient(to bottom, #254b85, #1d3972, #16285f, #0e184c, #0a0339);
+  border-radius: 2rem; }
 
 .verlistado {
   display: flex;
@@ -618,9 +625,6 @@ button p {
   align-items: center; }
 
 #listadodeClientes h1 {
-  text-align: center; }
-
-#listadodeClientes h2 {
   text-align: center; }
 
 @media screen and (max-width: 768px) and (min-width: 260px) {

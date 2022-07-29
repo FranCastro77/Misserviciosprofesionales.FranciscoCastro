@@ -18,6 +18,7 @@ const btnCargar = document.getElementById("btnusuario")
 const nombreUsuario = []
 
 
+
 //Seccion Clientes
 
 class Cliente {
