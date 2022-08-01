@@ -182,7 +182,38 @@ btncargarCliente.addEventListener("click", (e)=>{
     }
   })
 
- 
+function mostrarclientes (){
+  
+  let muestraclientes = clientesenLS.filter((el) => el.documento === document.getElementById("docupersonal").value)
+
+  muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
+    let li = document.createElement("li");
+    li.innerHTML = `
+    
+    <hr> 
+    ${denominacion.toUpperCase()}
+    ${"- IDCUIT N°: " + digitocuit}  
+    ${"- MES CIERRE EECC: " + mescierre} 
+    ${iva && "- INSC. IVA: "+ iva} 
+    ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
+
+
+  let botonBorrar = document.createElement("button");
+  botonBorrar.innerText = "Borrar";
+    
+  botonBorrar.addEventListener("click", () => {
+      eliminarcliente(denominacion);
+
+      
+  })
+
+  li.appendChild(botonBorrar);   
+
+  listadoClientes.appendChild(li);
+  });
+
+}
+
 
 
 btnverClientes.addEventListener("click", (e) =>{
@@ -204,31 +235,7 @@ btnverClientes.addEventListener("click", (e) =>{
 
     }else{
     
-      muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
-        let li = document.createElement("li");
-        li.innerHTML = `
-        
-        <hr> 
-        ${denominacion.toUpperCase()}
-        ${"- IDCUIT N°: " + digitocuit}  
-        ${"- MES CIERRE EECC: " + mescierre} 
-        ${iva && "- INSC. IVA: "+ iva} 
-        ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
-
-
-      let botonBorrar = document.createElement("button");
-      botonBorrar.innerText = "Borrar";
-        
-      botonBorrar.addEventListener("click", () => {
-          eliminarcliente(digitocuit);
-
-          
-      })
-
-      li.appendChild(botonBorrar);   
-
-      listadoClientes.appendChild(li);
-      });
+    mostrarclientes();
 
     }
 
@@ -237,58 +244,11 @@ btnverClientes.addEventListener("click", (e) =>{
     listadoClientes.innerHTML = "<h1> DEBES INGRESAR UN DOCUMENTO PARA PODER LISTAR TUS CLIENTES. </h1>"
   }
 
-
-
-
-
-
-
-
-
-
-
-
-      // if(muestraclientes.length === 0){
-      //   console.log(muestraclientes);
-      //   listadoClientes.innerHTML = "<h1> Aun no tienes clientes guardados. </h1><hr><h2> Recuerda que para poder hacerlo, primero debes registrar tus datos.</h2>"
-
-
-      // }else{
-      
-      //   muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
-      //     let li = document.createElement("li");
-      //     li.innerHTML = `
-          
-      //     <hr> 
-      //     ${denominacion.toUpperCase()}
-      //     ${"- IDCUIT N°: " + digitocuit}  
-      //     ${"- MES CIERRE EECC: " + mescierre} 
-      //     ${iva && "- INSC. IVA: "+ iva} 
-      //     ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
-
-
-      //   let botonBorrar = document.createElement("button");
-      //   botonBorrar.innerText = "Borrar";
-          
-      //   botonBorrar.addEventListener("click", () => {
-      //       eliminarcliente(digitocuit);
-
-            
-      //   })
-
-      //   li.appendChild(botonBorrar);   
-
-      //   listadoClientes.appendChild(li);
-      //   });
-
-      // }
-
       })
 
       
-
   
-  function eliminarcliente (digitocuit) {
+  function eliminarcliente (denominacion) {
 
     Swal.fire({
       title: 'Esta seguro?',
@@ -300,7 +260,7 @@ btnverClientes.addEventListener("click", (e) =>{
       confirmButtonText: 'OK Borrar!'
     }).then((result) => {
       if (result.isConfirmed) {
-        clientesenLS = clientesenLS.filter((el) => el.digitocuit !== digitocuit);
+        clientesenLS = clientesenLS.filter((el) => el.denominacion !== denominacion);
         localStorage.setItem("Clientes", JSON.stringify(clientesenLS));
 
         listadoClientes.innerHTML = "";
@@ -315,58 +275,9 @@ btnverClientes.addEventListener("click", (e) =>{
 
         }else{
         
-          muestraclientes.forEach(({denominacion, digitocuit, mescierre, iva, ganancias}) => {
-            let li = document.createElement("li");
-            li.innerHTML = `
-            
-            <hr> 
-            ${denominacion.toUpperCase()}
-            ${"- IDCUIT N°: " + digitocuit}  
-            ${"- MES CIERRE EECC: " + mescierre} 
-            ${iva && "- INSC. IVA: "+ iva} 
-            ${ganancias && "- INSC. GCIAS.: "+ ganancias}`;
-
-
-          let botonBorrar = document.createElement("button");
-          botonBorrar.innerText = "Borrar";
-            
-          botonBorrar.addEventListener("click", () => {
-              eliminarcliente(digitocuit);
-
-              
-          })
-
-          li.appendChild(botonBorrar);   
-
-          listadoClientes.appendChild(li);
-          });
+        mostrarclientes();
 
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         Swal.fire(
           'BORRADO!',

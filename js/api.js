@@ -1,10 +1,4 @@
 
-let date = new Date();
-let output = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();
-// console.log(output);
-
-let infousd = document.getElementById("cotizaciondolar")
-
 let titulo = document.createElement("titulo")
 titulo.innerHTML = `
 <h5> ${"COTIZACIONES DOLAR ESTADOUNIDENSE AL DIA: " + output} </h5>
@@ -13,16 +7,14 @@ infousd.insertAdjacentElement("afterbegin", titulo);
 
 
 
-
-
-const cotizacionesusd = []  
-
 const vercotizaciones = async () => {
+
+    setInterval("location.reload()",30000);
     
     try{
         const UsdOficial = await fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolaroficial')
         
-        // console.log(UsdOficial)
+
 
         const dataOfi = await UsdOficial.json();
         cotizacionesusd.push(dataOfi)
@@ -31,7 +23,7 @@ const vercotizaciones = async () => {
 
         const Usdblue = await fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarblue')
         
-        // console.log(Usdblue)
+ 
 
         const datablue = await Usdblue.json();
         cotizacionesusd.push(datablue)
@@ -40,7 +32,7 @@ const vercotizaciones = async () => {
 
         const Usdccl = await fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/contadoliqui')
         
-        // console.log(Usdccl)
+  
 
         const dataccl = await Usdccl.json();
         cotizacionesusd.push(dataccl)
@@ -49,7 +41,7 @@ const vercotizaciones = async () => {
 
         const Usdturista = await fetch('https://cors-solucion.herokuapp.com/https://api-dolar-argentina.herokuapp.com/api/dolarturista')
         
-        // console.log(Usdturista)
+  
 
         const dataturista = await Usdturista.json();
         cotizacionesusd.push(dataturista)
@@ -69,10 +61,6 @@ const vercotizaciones = async () => {
             let li = document.createElement("li");
             li.innerHTML = `
 
-
-            
-       
-
             ${fecha}
 
             <hr>
@@ -87,9 +75,6 @@ const vercotizaciones = async () => {
         console.log(error);
     }
 
-
-
 }
-
 
 vercotizaciones ();

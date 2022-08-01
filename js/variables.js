@@ -1,3 +1,13 @@
+//Home - API
+
+let date = new Date();
+let output = String(date.getDate()).padStart(2, '0') + '/' + String(date.getMonth() + 1).padStart(2, '0') + '/' + date.getFullYear();
+
+let infousd = document.getElementById("cotizaciondolar")
+
+const cotizacionesusd = []  
+
+
 
 //Seccion Usuario
 
